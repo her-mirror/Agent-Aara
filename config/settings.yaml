@@ -1,0 +1,8 @@
+llm:
+  model_name: gpt-4o
+vectorstore:
+  path: data/vectorstore/
+tools:
+  skincare: enabled
+  health_advice: enabled
+  search: enabled 

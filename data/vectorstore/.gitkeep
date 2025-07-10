@@ -1,0 +1,3 @@
+# This file ensures the vectorstore directory is tracked by git
+# while the actual vector database files are ignored
+# ChromaDB will create files here when running the agent 

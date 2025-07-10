@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  ara-agent:
+    build: .
+    container_name: ara-agent
+    env_file:
+      - ../.env
+    volumes:
+      - ../data:/app/data
+    working_dir: /app
+    command: ["python", "scripts/run_agent.py"]
+    ports:
+      - "8000:8000" 

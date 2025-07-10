@@ -1,0 +1,72 @@
+{
+  "title": "Ara Health Agent Documentation",
+  "description": "Comprehensive documentation for the Ara Health Agent - Your AI companion for women's health and skincare",
+  "author": "HerMirror Team",
+  "language": "en",
+  "gitbook": ">=3.2.0",
+  "root": ".",
+  "structure": {
+    "readme": "README.md",
+    "summary": "SUMMARY.md",
+    "glossary": "appendices/glossary.md"
+  },
+  "plugins": [
+    "github",
+    "edit-link",
+    "prism",
+    "hints",
+    "expandable-chapters",
+    "search-pro",
+    "copy-code-button",
+    "page-toc-button",
+    "back-to-top-button",
+    "theme-default"
+  ],
+  "pluginsConfig": {
+    "github": {
+      "url": "https://github.com/your-org/aara-health-agent"
+    },
+    "edit-link": {
+      "base": "https://github.com/your-org/aara-health-agent/edit/main/docs",
+      "label": "Edit This Page"
+    },
+    "prism": {
+      "css": [
+        "prism-themes/themes/prism-vs.css"
+      ]
+    },
+    "hints": {
+      "info": "💡",
+      "tip": "🔧",
+      "danger": "⚠️",
+      "working": "🔨"
+    },
+    "theme-default": {
+      "showLevel": true,
+      "styles": {
+        "website": "styles/website.css",
+        "ebook": "styles/ebook.css",
+        "pdf": "styles/pdf.css",
+        "mobi": "styles/mobi.css",
+        "epub": "styles/epub.css"
+      }
+    },
+    "search-pro": {
+      "cutWordLib": "nodejieba",
+      "defineWord": ["Ara", "PCOS", "LangGraph", "HerMirror"]
+    }
+  },
+  "variables": {
+    "version": "1.0.0",
+    "agent_name": "Ara",
+    "platform_name": "HerMirror",
+    "github_repo": "https://github.com/your-org/aara-health-agent"
+  },
+  "links": {
+    "sidebar": {
+      "🌸 HerMirror Platform": "https://hermirror.com",
+      "🐛 Report Issues": "https://github.com/your-org/aara-health-agent/issues",
+      "💬 Discussions": "https://github.com/your-org/aara-health-agent/discussions"
+    }
+  }
+} 

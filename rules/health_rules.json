@@ -1,0 +1,516 @@
+{
+  "safety_checks": [
+    {
+      "trigger": "severe pain",
+      "response": "Severe pain may indicate a medical emergency. Please seek immediate medical attention or call emergency services."
+    },
+    {
+      "trigger": "heavy bleeding",
+      "response": "Heavy bleeding can be serious. Please consult a doctor or visit the nearest healthcare facility immediately."
+    },
+    {
+      "trigger": "chest pain",
+      "response": "Chest pain requires immediate medical attention. Please call emergency services or go to the nearest emergency room."
+    },
+    {
+      "trigger": "difficulty breathing",
+      "response": "Difficulty breathing is a medical emergency. Please call emergency services immediately or go to the nearest emergency room."
+    },
+    {
+      "trigger": "severe headache",
+      "response": "Severe headaches can indicate serious conditions. Please seek immediate medical attention, especially if accompanied by vision changes, nausea, or neck stiffness."
+    },
+    {
+      "trigger": "sudden vision loss",
+      "response": "Sudden vision loss is a medical emergency. Please seek immediate medical attention or call emergency services."
+    },
+    {
+      "trigger": "severe abdominal pain",
+      "response": "Severe abdominal pain may indicate a serious condition. Please seek immediate medical attention or call emergency services."
+    },
+    {
+      "trigger": "fainting",
+      "response": "Fainting can indicate various medical conditions. If you've fainted or feel like you might faint, please seek medical attention immediately."
+    },
+    {
+      "trigger": "seizure",
+      "response": "Seizures require immediate medical attention. Please call emergency services or go to the nearest emergency room."
+    },
+    {
+      "trigger": "severe nausea and vomiting",
+      "response": "Severe nausea and vomiting can lead to dehydration and may indicate serious conditions. Please seek medical attention if symptoms persist."
+    },
+    {
+      "trigger": "high fever",
+      "response": "High fever (over 103°F/39.4°C) requires medical attention. Please contact a healthcare provider or seek emergency care."
+    },
+    {
+      "trigger": "severe allergic reaction",
+      "response": "Severe allergic reactions can be life-threatening. If you're experiencing difficulty breathing, swelling, or severe hives, call emergency services immediately."
+    },
+    {
+      "trigger": "suicidal thoughts",
+      "response": "If you're having thoughts of self-harm, please reach out for help immediately. Contact: National Suicide Prevention Lifeline: 988, or go to your nearest emergency room. You are not alone, and help is available."
+    },
+    {
+      "trigger": "self harm",
+      "response": "If you're thinking about harming yourself, please reach out for help immediately. Contact: National Suicide Prevention Lifeline: 988, Crisis Text Line: Text HOME to 741741, or go to your nearest emergency room."
+    },
+    {
+      "trigger": "overdose",
+      "response": "Drug overdose is a medical emergency. Call emergency services immediately (911) or go to the nearest emergency room. Do not wait."
+    },
+    {
+      "trigger": "severe bleeding",
+      "response": "Severe bleeding requires immediate medical attention. Apply pressure to the wound if possible and call emergency services or go to the nearest emergency room."
+    },
+    {
+      "trigger": "pregnancy bleeding",
+      "response": "Bleeding during pregnancy can be serious. Please contact your healthcare provider immediately or go to the nearest emergency room."
+    },
+    {
+      "trigger": "severe pelvic pain",
+      "response": "Severe pelvic pain may indicate conditions like ovarian cysts, ectopic pregnancy, or other serious issues. Please seek immediate medical attention."
+    },
+    {
+      "trigger": "sudden severe back pain",
+      "response": "Sudden severe back pain, especially if accompanied by other symptoms, may indicate serious conditions. Please seek medical attention immediately."
+    },
+    {
+      "trigger": "severe menstrual bleeding",
+      "response": "Extremely heavy menstrual bleeding (soaking through a pad or tampon every hour) may require immediate medical attention. Please contact your healthcare provider or visit an emergency room."
+    }
+  ],
+  "redirects": [
+    {
+      "trigger": "period",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "menstrual",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "pcos",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "cycle",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "cramps",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "ovulation",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "fertility",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "pregnancy",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "conception",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "trying to conceive",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "ttc",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "endometriosis",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "fibroids",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "thyroid",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "hormones",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "hormonal",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "birth control",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "contraception",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "menopause",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "perimenopause",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "hot flashes",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "night sweats",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "irregular periods",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "missed period",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "late period",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "heavy periods",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "light periods",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "pms",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "pmdd",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "mood swings",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "bloating",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "breast tenderness",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "weight gain",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "weight loss",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "hair loss",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "excess hair",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "hirsutism",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "insulin resistance",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "diabetes",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "metabolic syndrome",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "nutrition",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "diet",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "supplements",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "vitamins",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "exercise",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "workout",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "fitness",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "pelvic floor",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "kegel",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "urinary incontinence",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "bladder",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "uti",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "yeast infection",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "bacterial vaginosis",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "vaginal discharge",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "vaginal health",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "sexual health",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "libido",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "painful sex",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "breast health",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "breast exam",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "mammogram",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "bone health",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "osteoporosis",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "calcium",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "vitamin d",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "iron deficiency",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "anemia",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "fatigue",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "sleep",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "insomnia",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "stress",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "anxiety",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "depression",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "mental health",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "body image",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "self esteem",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "eating disorder",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "postpartum",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "breastfeeding",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "lactation",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "miscarriage",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "pregnancy loss",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "infertility",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "ivf",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    },
+    {
+      "trigger": "reproductive health",
+      "action": "route_to_tool",
+      "tool": "health_advice_tool"
+    }
+  ]
+} 

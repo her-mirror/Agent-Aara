@@ -1,0 +1,153 @@
+{
+  "emergencies": [
+    {
+      "trigger": "severe pain",
+      "response": "Your symptoms may indicate a medical emergency. Please seek immediate medical attention or call emergency services."
+    },
+    {
+      "trigger": "heavy bleeding",
+      "response": "Heavy bleeding can be serious. Please consult a doctor or visit the nearest healthcare facility immediately."
+    },
+    {
+      "trigger": "can't breathe",
+      "response": "Difficulty breathing is a medical emergency. Please call emergency services immediately (911) or go to the nearest emergency room."
+    },
+    {
+      "trigger": "chest pain",
+      "response": "Chest pain requires immediate medical attention. Please call emergency services or go to the nearest emergency room immediately."
+    },
+    {
+      "trigger": "heart attack",
+      "response": "If you suspect a heart attack, call emergency services immediately (911). Symptoms include chest pain, shortness of breath, nausea, and pain in arms, back, neck, or jaw."
+    },
+    {
+      "trigger": "stroke",
+      "response": "If you suspect a stroke, call emergency services immediately (911). Remember FAST: Face drooping, Arm weakness, Speech difficulty, Time to call 911."
+    },
+    {
+      "trigger": "unconscious",
+      "response": "If someone is unconscious, call emergency services immediately (911). Check for breathing and pulse, and be prepared to perform CPR if trained."
+    },
+    {
+      "trigger": "seizure",
+      "response": "If someone is having a seizure, call emergency services (911). Keep them safe, don't restrain them, and time the seizure."
+    },
+    {
+      "trigger": "overdose",
+      "response": "Drug overdose is a medical emergency. Call emergency services immediately (911) or contact Poison Control: 1-800-222-1222."
+    },
+    {
+      "trigger": "suicide",
+      "response": "If you're having thoughts of suicide, please reach out for help immediately. National Suicide Prevention Lifeline: 988, Crisis Text Line: Text HOME to 741741, or call 911."
+    },
+    {
+      "trigger": "kill myself",
+      "response": "Please reach out for help immediately. You are not alone. National Suicide Prevention Lifeline: 988, Crisis Text Line: Text HOME to 741741, or call 911."
+    },
+    {
+      "trigger": "end my life",
+      "response": "Please reach out for help immediately. Your life has value. National Suicide Prevention Lifeline: 988, Crisis Text Line: Text HOME to 741741, or call 911."
+    },
+    {
+      "trigger": "want to die",
+      "response": "Please reach out for help immediately. You matter and help is available. National Suicide Prevention Lifeline: 988, Crisis Text Line: Text HOME to 741741, or call 911."
+    },
+    {
+      "trigger": "domestic violence",
+      "response": "If you're in immediate danger, call 911. For support: National Domestic Violence Hotline: 1-800-799-7233. You deserve safety and support."
+    },
+    {
+      "trigger": "abuse",
+      "response": "If you're experiencing abuse and in immediate danger, call 911. For support: National Domestic Violence Hotline: 1-800-799-7233, RAINN: 1-800-656-4673."
+    },
+    {
+      "trigger": "sexual assault",
+      "response": "If you've experienced sexual assault, you're not alone. For immediate help: call 911. For support: RAINN National Sexual Assault Hotline: 1-800-656-4673."
+    },
+    {
+      "trigger": "rape",
+      "response": "If you've experienced sexual violence, support is available. For immediate help: call 911. For support: RAINN National Sexual Assault Hotline: 1-800-656-4673."
+    },
+    {
+      "trigger": "severe allergic reaction",
+      "response": "Severe allergic reactions can be life-threatening. If experiencing difficulty breathing, swelling, or severe hives, call emergency services immediately (911)."
+    },
+    {
+      "trigger": "anaphylaxis",
+      "response": "Anaphylaxis is a medical emergency. Use epinephrine if available and call emergency services immediately (911)."
+    },
+    {
+      "trigger": "poisoning",
+      "response": "If you suspect poisoning, call Poison Control immediately: 1-800-222-1222, or emergency services (911) if the person is unconscious or having trouble breathing."
+    },
+    {
+      "trigger": "severe burn",
+      "response": "Severe burns require immediate medical attention. Cool the burn with cool water, don't use ice, and call emergency services (911) for large or deep burns."
+    },
+    {
+      "trigger": "broken bone",
+      "response": "If you suspect a broken bone, don't move the injured area, apply ice, and seek immediate medical attention or call emergency services."
+    },
+    {
+      "trigger": "head injury",
+      "response": "Head injuries can be serious. If there's loss of consciousness, confusion, or severe headache, call emergency services immediately (911)."
+    },
+    {
+      "trigger": "concussion",
+      "response": "Concussions require medical evaluation. If there's loss of consciousness, vomiting, or severe confusion, call emergency services (911)."
+    },
+    {
+      "trigger": "severe dehydration",
+      "response": "Severe dehydration can be dangerous. If experiencing dizziness, rapid heartbeat, or confusion, seek immediate medical attention."
+    },
+    {
+      "trigger": "diabetic emergency",
+      "response": "Diabetic emergencies require immediate attention. If someone is unconscious or having severe symptoms, call emergency services (911)."
+    },
+    {
+      "trigger": "mental health crisis",
+      "response": "Mental health crises are real emergencies. For immediate help: National Suicide Prevention Lifeline: 988, Crisis Text Line: Text HOME to 741741, or call 911."
+    },
+    {
+      "trigger": "panic attack severe",
+      "response": "Severe panic attacks can feel overwhelming. If symptoms include chest pain or difficulty breathing, seek medical attention. For support: Crisis Text Line: Text HOME to 741741."
+    },
+    {
+      "trigger": "eating disorder crisis",
+      "response": "Eating disorder emergencies are serious. For immediate help: National Eating Disorders Association: 1-800-931-2237, or call 911 if in medical danger."
+    }
+  ],
+  "crisis_resources": [
+    {
+      "trigger": "crisis hotline",
+      "response": "Crisis Resources: National Suicide Prevention Lifeline: 988, Crisis Text Line: Text HOME to 741741, National Domestic Violence Hotline: 1-800-799-7233, RAINN: 1-800-656-4673, SAMHSA: 1-800-662-4357."
+    },
+    {
+      "trigger": "help numbers",
+      "response": "Important Help Numbers: Emergency: 911, Suicide Prevention: 988, Crisis Text Line: Text HOME to 741741, Domestic Violence: 1-800-799-7233, Sexual Assault: 1-800-656-4673, Substance Abuse: 1-800-662-4357, Poison Control: 1-800-222-1222."
+    },
+    {
+      "trigger": "mental health help",
+      "response": "Mental Health Resources: National Suicide Prevention Lifeline: 988, Crisis Text Line: Text HOME to 741741, SAMHSA National Helpline: 1-800-662-4357, Psychology Today therapist finder, or contact your local mental health services."
+    }
+  ],
+  "general_safety": [
+    {
+      "trigger": "medication interaction",
+      "response": "Medication interactions can be dangerous. Always consult your pharmacist or healthcare provider before combining medications or supplements."
+    },
+    {
+      "trigger": "pregnancy medication",
+      "response": "Many medications can affect pregnancy. Always consult your healthcare provider before taking any medication or supplement during pregnancy or while breastfeeding."
+    },
+    {
+      "trigger": "supplement overdose",
+      "response": "Taking too many supplements can be harmful. Follow dosage instructions and consult healthcare providers before taking multiple supplements."
+    },
+    {
+      "trigger": "medical emergency signs",
+      "response": "Seek immediate medical attention for: severe chest pain, difficulty breathing, sudden severe headache, loss of consciousness, severe bleeding, signs of stroke (face drooping, arm weakness, speech difficulty), or severe allergic reactions."
+    }
+  ],
+  "disclaimer": "Consult a doctor for medical advice. I provide educational information only and cannot replace professional medical care."
+} 

@@ -1,0 +1,393 @@
+{
+  "safety_checks": [
+    {
+      "trigger": "burning skin",
+      "response": "If you're experiencing burning or severe irritation, stop using the product immediately and consult a dermatologist if symptoms persist."
+    },
+    {
+      "trigger": "allergic reaction",
+      "response": "If you suspect an allergic reaction, discontinue use immediately and seek medical attention if symptoms are severe."
+    },
+    {
+      "trigger": "severe rash",
+      "response": "Severe skin rashes may indicate serious allergic reactions. Stop using any new products and consult a healthcare provider immediately."
+    },
+    {
+      "trigger": "swollen face",
+      "response": "Facial swelling can indicate a serious allergic reaction. Seek immediate medical attention or call emergency services."
+    },
+    {
+      "trigger": "difficulty breathing from skincare",
+      "response": "Difficulty breathing after using skincare products is a medical emergency. Call emergency services immediately."
+    },
+    {
+      "trigger": "severe itching",
+      "response": "Severe itching that doesn't subside may indicate an allergic reaction. Stop using the product and consult a healthcare provider if symptoms persist."
+    },
+    {
+      "trigger": "chemical burn",
+      "response": "Chemical burns from skincare products require immediate medical attention. Rinse the area with cool water and seek emergency care."
+    },
+    {
+      "trigger": "blistering skin",
+      "response": "Skin blistering from products may indicate a serious reaction. Stop use immediately and consult a dermatologist or healthcare provider."
+    }
+  ],
+  "redirects": [
+    {
+      "trigger": "skincare routine",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "skin type",
+      "action": "route_to_tool", 
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "acne",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "pimples",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "blackheads",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "whiteheads",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "breakouts",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "cystic acne",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "hormonal acne",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "adult acne",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "oily skin",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "dry skin",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "combination skin",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "sensitive skin",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "normal skin",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "dehydrated skin",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "mature skin",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "aging skin",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "anti aging",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "wrinkles",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "fine lines",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "dark spots",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "hyperpigmentation",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "melasma",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "sun damage",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "age spots",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "rosacea",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "eczema",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "psoriasis",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "dermatitis",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "cleanser",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "moisturizer",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "serum",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "sunscreen",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "retinol",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "retinoid",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "vitamin c",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "niacinamide",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "hyaluronic acid",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "salicylic acid",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "glycolic acid",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "lactic acid",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "aha",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "bha",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "exfoliation",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "chemical exfoliant",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "physical exfoliant",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "toner",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "essence",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "face mask",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "sheet mask",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "clay mask",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "eye cream",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "under eye",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "dark circles",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "puffy eyes",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "neck care",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "body skincare",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "morning routine",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "night routine",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "skincare order",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "product layering",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "skincare ingredients",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "pregnancy skincare",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "teen skincare",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "korean skincare",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "natural skincare",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "organic skincare",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "budget skincare",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "luxury skincare",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    },
+    {
+      "trigger": "drugstore skincare",
+      "action": "route_to_tool",
+      "tool": "skincare_tool"
+    }
+  ]
+} 

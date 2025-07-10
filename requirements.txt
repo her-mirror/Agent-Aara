@@ -1,0 +1,10 @@
+langchain>=0.1.0
+langchain-community>=0.0.30
+langgraph>=0.0.20
+langchain-openai>=0.0.8
+tavily-python>=0.3.0
+chromadb>=0.4.24
+python-dotenv>=1.0.0
+PyYAML>=6.0
+pytest>=7.0.0
+openai>=1.0.0 

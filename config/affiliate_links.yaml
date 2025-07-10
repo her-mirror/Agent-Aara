@@ -1,0 +1,100 @@
+# Affiliate Links Configuration
+# Update these links with your actual affiliate URLs
+
+affiliate_settings:
+  disclaimer_text: "Please note: These are affiliate links. I may earn a small commission if you purchase through these links, at no extra cost to you. Always patch test new skincare products and consult healthcare providers for supplements."
+  max_suggestions_per_response: 2
+  enable_product_suggestions: true
+
+# Product Database
+products:
+  skincare:
+    cleansers:
+      - name: "CeraVe Foaming Facial Cleanser"
+        description: "Gentle foaming cleanser with ceramides and hyaluronic acid"
+        price_range: "$12-15"
+        affiliate_link: "https://amzn.to/your-cleanser-link"
+        keywords: ["oily skin", "acne", "gentle cleanser", "foaming"]
+        recommended_for: ["oily_skin", "acne_prone", "combination_skin"]
+        why_recommended: "Contains ceramides to restore skin barrier while effectively removing oil"
+      
+      - name: "Neutrogena Hydrating Foaming Cleanser" 
+        description: "Gentle cleanser with hyaluronic acid for dry skin"
+        price_range: "$8-12"
+        affiliate_link: "https://amzn.to/your-hydrating-cleanser-link"
+        keywords: ["dry skin", "hydrating", "gentle", "hyaluronic acid"]
+        recommended_for: ["dry_skin", "sensitive_skin", "mature_skin"]
+        why_recommended: "Cleanses without stripping natural oils while adding hydration"
+    
+    serums:
+      - name: "The Ordinary Niacinamide 10% + Zinc 1%"
+        description: "Serum to reduce appearance of blemishes and congestion"
+        price_range: "$7-10"
+        affiliate_link: "https://beautylish.com/your-niacinamide-link"
+        keywords: ["acne", "oily skin", "pores", "blemishes"]
+        recommended_for: ["acne_prone", "oily_skin", "large_pores"]
+        why_recommended: "Clinical concentration of niacinamide helps control oil production and minimize pores"
+    
+    sunscreens:
+      - name: "La Roche-Posay Anthelios Ultra Light Sunscreen SPF 60"
+        description: "Lightweight, non-greasy broad spectrum sunscreen"
+        price_range: "$25-30"
+        affiliate_link: "https://dermstore.com/your-sunscreen-link"
+        keywords: ["sunscreen", "spf", "protection", "lightweight"]
+        recommended_for: ["all_skin_types", "acne_prone", "sensitive_skin"]
+        why_recommended: "Provides excellent protection without clogging pores or leaving white residue"
+
+  health_supplements:
+    iron:
+      - name: "Nature Made Iron 18mg"
+        description: "Iron supplement for women with iron deficiency"
+        price_range: "$8-12"
+        affiliate_link: "https://amzn.to/your-iron-link"
+        keywords: ["iron deficiency", "anemia", "fatigue", "periods"]
+        recommended_for: ["heavy_periods", "iron_deficiency", "fatigue"]
+        why_recommended: "Supports healthy iron levels, especially important for women with heavy periods"
+    
+    hormonal_support:
+      - name: "Vitex Chasteberry Supplement"
+        description: "Natural hormone support for menstrual irregularities"
+        price_range: "$15-20"
+        affiliate_link: "https://iherb.com/your-vitex-link"
+        keywords: ["irregular periods", "pms", "hormonal balance", "pcos"]
+        recommended_for: ["irregular_periods", "pms", "hormonal_imbalance"]
+        why_recommended: "Traditional herb that may help support regular cycles and reduce PMS symptoms"
+      
+      - name: "Inositol Powder"
+        description: "Myo-inositol supplement for PCOS support"
+        price_range: "$20-25"
+        affiliate_link: "https://amzn.to/your-inositol-link"
+        keywords: ["pcos", "insulin resistance", "ovulation", "hormones"]
+        recommended_for: ["pcos", "insulin_resistance", "fertility_support"]
+        why_recommended: "Research shows inositol may help improve insulin sensitivity and ovulation in PCOS"
+
+  period_care:
+    menstrual_cups:
+      - name: "Diva Cup Menstrual Cup"
+        description: "Reusable menstrual cup for eco-friendly period care"
+        price_range: "$25-35"
+        affiliate_link: "https://divacup.com/your-affiliate-link"
+        keywords: ["menstrual cup", "eco-friendly", "reusable", "period"]
+        recommended_for: ["heavy_periods", "eco_conscious", "active_lifestyle"]
+        why_recommended: "Eco-friendly alternative that can be worn for up to 12 hours"
+    
+    comfort:
+      - name: "Heating Pad for Cramps"
+        description: "Electric heating pad for menstrual cramp relief"
+        price_range: "$20-30"
+        affiliate_link: "https://amzn.to/your-heating-pad-link"
+        keywords: ["cramps", "pain relief", "heating pad", "menstrual pain"]
+        recommended_for: ["menstrual_cramps", "period_pain", "endometriosis"]
+        why_recommended: "Heat therapy is clinically proven to reduce menstrual cramp intensity"
+
+# Popular affiliate programs for women's health/skincare:
+affiliate_programs:
+  amazon_associates: "https://affiliate-program.amazon.com/"
+  sephora_affiliate: "https://www.sephora.com/beauty/affiliate-program"
+  ulta_rewards: "https://www.ulta.com/business/rewards-and-affiliate-program"
+  dermstore_affiliate: "https://www.dermstore.com/affiliate-program.list"
+  iherb_affiliate: "https://www.iherb.com/info/affiliate-program"
+  beautylish_affiliate: "https://www.beautylish.com/affiliate" 
