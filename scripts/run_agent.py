@@ -16,9 +16,9 @@ except ImportError as e:
 
 def main():
     print("=" * 50)
-    print("🌸 Ara: Women's Health & Skincare AI Agent 🌸")
+    print("🌸 Aara: Women's Health & Skincare AI Agent 🌸")
     print("=" * 50)
-    print("Hi! I'm Ara, your supportive AI assistant for women's health and skincare.")
+    print("Hi! I'm Aara, your supportive AI assistant for women's health and skincare.")
     print("I can help with topics like:")
     print("• Skincare routines for different skin types")
     print("• Menstrual health and cycle tracking")

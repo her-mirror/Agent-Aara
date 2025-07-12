@@ -35,6 +35,67 @@ def load_rules() -> tuple:
         print(f"❌ JSON parsing error: {e}")
         raise
 
+def is_greeting(user_input: str) -> bool:
+    """Check if user input is a greeting"""
+    greeting_patterns = [
+        'hello', 'hi', 'hey', 'good morning', 'good evening', 'good afternoon',
+        'good night', 'howdy', 'greetings', 'hiya', "what's up", 'sup', 'yo',
+        'bonjour', 'namaste', 'hola', 'salaam', 'good day'
+    ]
+    
+    user_input_lower = user_input.lower().strip()
+    
+    # Remove common punctuation and extra characters
+    cleaned_input = ''.join(c for c in user_input_lower if c.isalpha() or c.isspace())
+    
+    # Check for exact matches or greetings at the start
+    for pattern in greeting_patterns:
+        # Exact match
+        if cleaned_input == pattern:
+            return True
+        # Starts with greeting
+        if cleaned_input.startswith(pattern + ' '):
+            return True
+        # Check for repeated letters (hi -> hii, hello -> helloo)
+        if len(cleaned_input) > len(pattern):
+            # Check if it's a variation with repeated letters
+            if cleaned_input.startswith(pattern) and all(c in pattern for c in cleaned_input):
+                return True
+    
+    # Special handling for common greeting variations
+    greeting_variants = {
+        'hi': ['hii', 'hiii', 'hiiii'],
+        'hello': ['helloo', 'hellooo', 'helloooo'],
+        'hey': ['heyy', 'heyyy', 'heyyyy'],
+        'yo': ['yoo', 'yooo']
+    }
+    
+    for base, variants in greeting_variants.items():
+        if cleaned_input in variants:
+            return True
+    
+    return False
+
+def is_crisis_situation(user_input: str) -> bool:
+    """Check if user input indicates a mental health crisis"""
+    crisis_patterns = [
+        'suicide', 'kill myself', 'end my life', 'want to die', 'kill me',
+        'hurt myself', 'self harm', 'end it all', 'not worth living',
+        'better off dead', 'want to disappear', 'cut myself', 'overdose',
+        'jump off', 'hang myself', 'shoot myself', 'drown myself',
+        'life is not worth', 'tired of living', 'ready to die',
+        'planning to kill', 'thinking about dying', 'thoughts of death',
+        'suicidal thoughts', 'suicidal ideation', 'want to hurt myself'
+    ]
+    
+    user_input_lower = user_input.lower().strip()
+    
+    for pattern in crisis_patterns:
+        if pattern in user_input_lower:
+            return True
+    
+    return False
+
 health_rules, skincare_rules, safety_rules, general_rules = load_rules()
 
 def rule_engine_node(state: Dict[str, Any]) -> Dict[str, Any]:
@@ -43,8 +104,10 @@ def rule_engine_node(state: Dict[str, Any]) -> Dict[str, Any]:
     
     Priority order:
     1. Safety checks (highest priority)
-    2. General rules (greetings, agent info, platform info)
-    3. Health/skincare routing (lowest priority)
+    2. Crisis situations (enhanced LLM-based response)
+    3. Greetings (dynamic LLM-based response)
+    4. General rules (agent info, platform info)
+    5. Health/skincare routing (lowest priority)
     """
     user_input = state.get("user_input", "").lower().strip()
     
@@ -56,13 +119,16 @@ def rule_engine_node(state: Dict[str, Any]) -> Dict[str, Any]:
         health_rules, skincare_rules, safety_rules, general_rules = load_rules()
         
         # 1. SAFETY CHECKS (Highest Priority)
-        # Check emergency situations first
+        # Check emergency situations first (but not mental health crises)
         for emergency in safety_rules.get("emergencies", []):
+            # Skip suicide/crisis patterns - they will be handled by enhanced crisis system
+            if emergency["trigger"].lower() in ['suicide', 'kill myself', 'end my life', 'want to die']:
+                continue
             if emergency["trigger"].lower() in user_input:
                 state["final_response"] = emergency["response"]
                 return state
         
-        # Check crisis resources
+        # Check crisis resources (but allow specific crisis patterns to go to LLM)
         for crisis in safety_rules.get("crisis_resources", []):
             if crisis["trigger"].lower() in user_input:
                 state["final_response"] = crisis["response"]
@@ -74,13 +140,19 @@ def rule_engine_node(state: Dict[str, Any]) -> Dict[str, Any]:
                 state["final_response"] = safety["response"]
                 return state
         
-        # 2. GENERAL RULES (Medium Priority)
-        # Check greetings
-        for greeting in general_rules.get("greetings", []):
-            if greeting["trigger"].lower() in user_input:
-                state["final_response"] = greeting["response"]
-                return state
+        # 2. CRISIS SITUATIONS (Enhanced LLM Response)
+        if is_crisis_situation(state.get("user_input", "")):
+            state["response_type"] = "crisis"
+            state["use_llm"] = True
+            return state
         
+        # 3. GREETINGS (Dynamic LLM Response)
+        if is_greeting(state.get("user_input", "")):
+            state["response_type"] = "greeting"
+            state["use_llm"] = True
+            return state
+        
+        # 4. GENERAL RULES (Medium Priority)
         # Check agent info
         for info in general_rules.get("agent_info", []):
             if info["trigger"].lower() in user_input:
@@ -105,7 +177,7 @@ def rule_engine_node(state: Dict[str, Any]) -> Dict[str, Any]:
                 state["final_response"] = starter["response"]
                 return state
         
-        # 3. HEALTH/SKINCARE ROUTING (Lower Priority)
+        # 5. HEALTH/SKINCARE ROUTING (Lower Priority)
         # Check health safety first
         for safety_check in health_rules.get("safety_checks", []):
             if safety_check["trigger"].lower() in user_input:

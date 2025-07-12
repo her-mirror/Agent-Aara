@@ -9,8 +9,8 @@ from typing import TypedDict, List, Dict, Any
 # Add parent directories to path for imports
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 
-from agent.reasoning import reasoning_node
-from agent.response import response_node
+from src.agent.reasoning import reasoning_node
+from src.agent.response import response_node
 from rules.rules_engine import rule_engine_node
 from tools.skincare import skincare_tool
 from tools.health_advice import health_advice_tool
@@ -34,12 +34,15 @@ if not OPENAI_API_KEY:
 llm = ChatOpenAI(model=MODEL_NAME, api_key=OPENAI_API_KEY)
 
 # Define the state type for the workflow
-class WorkflowState(TypedDict):
+class WorkflowState(TypedDict, total=False):
     user_input: str
     chat_history: List[Dict[str, str]]
     intermediate_steps: List[Dict[str, Any]]
     final_response: str
     next_node: str
+    use_llm: bool
+    response_type: str
+    route_to: str
 
 # Create workflow graph
 workflow = StateGraph(WorkflowState)
@@ -62,6 +65,9 @@ def route_after_reasoning(state: WorkflowState) -> str:
 
 def route_after_rules(state: WorkflowState) -> str:
     if state.get("final_response"):
+        return "response"
+    # Check if LLM should generate response (greeting, crisis, etc.)
+    if state.get("use_llm"):
         return "response"
     next_node = state.get("next_node", "response")
     return next_node
@@ -106,13 +112,16 @@ def run_workflow(user_input: str, chat_history: List[Dict[str, str]] = None) -> 
     if chat_history is None:
         chat_history = []
     
-    initial_state = WorkflowState(
-        user_input=user_input,
-        chat_history=chat_history,
-        intermediate_steps=[],
-        final_response="",
-        next_node=""
-    )
+    initial_state = {
+        "user_input": user_input,
+        "chat_history": chat_history,
+        "intermediate_steps": [],
+        "final_response": "",
+        "next_node": "",
+        "use_llm": False,
+        "response_type": "",
+        "route_to": ""
+    }
     
     result = app.invoke(initial_state)
     return result.get('final_response', 'Sorry, I could not process your request.') 
