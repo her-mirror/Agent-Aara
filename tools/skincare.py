@@ -146,7 +146,73 @@ def _get_personalized_tips(skin_type, concerns, context):
 
 def _generate_clarification_questions(user_input, context):
     """Generate intelligent clarification questions."""
+    
+    # Check if user is asking HOW TO DETERMINE their skin type
+    determine_keywords = ['how to know', 'how can i know', 'how do i know', 'how to determine', 'how to find out', 'what is my skin type', 'identify my skin type', 'find my skin type']
+    if any(keyword in user_input for keyword in determine_keywords):
+        return _get_skin_type_determination_guide()
+    
     if 'routine' in user_input:
         return "To recommend the best skincare routine, could you tell me: What's your skin type (oily, dry, combination, or sensitive)? Do you have any specific concerns like acne, aging, or sensitivity?"
     
-    return "To provide the best skincare advice, could you please specify your skin type? For example: oily, dry, combination, sensitive, or acne-prone skin. Also, let me know if you have any specific concerns!" 
+    return "To provide the best skincare advice, could you please specify your skin type? For example: oily, dry, combination, sensitive, or acne-prone skin. Also, let me know if you have any specific concerns!"
+
+def _get_skin_type_determination_guide():
+    """Provide a comprehensive guide on how to determine skin type."""
+    guide = """**🔍 How to Determine Your Skin Type**
+
+Here's a simple way to identify your skin type:
+
+**📋 The Wash Test (Most Reliable Method):**
+1. **Cleanse your face** with a gentle cleanser
+2. **Pat dry** and don't apply any products
+3. **Wait 30-60 minutes** and observe your skin
+4. **Check these areas**: T-zone (forehead, nose, chin) and cheeks
+
+**🔍 What to Look For:**
+
+**🛢️ Oily Skin:**
+- Shiny appearance all over, especially T-zone
+- Visible pores throughout face
+- Prone to blackheads and breakouts
+- Makeup tends to slide off
+
+**🏜️ Dry Skin:**
+- Feels tight or uncomfortable
+- Flaky or rough texture
+- Fine lines more visible
+- Minimal shine, even in T-zone
+
+**⚖️ Combination Skin:**
+- Oily T-zone (forehead, nose, chin)
+- Normal to dry cheeks
+- Larger pores in T-zone only
+- Different needs in different areas
+
+**🌹 Sensitive Skin:**
+- Easily irritated by products
+- Redness, burning, or stinging
+- Reacts to weather, stress, or hormones
+- May have any of the above types + sensitivity
+
+**🩺 Normal Skin:**
+- Balanced - not too oily or dry
+- Small pores
+- Smooth texture
+- Rarely breaks out
+
+**💡 Quick Daily Observations:**
+- **Morning**: How does your skin feel when you wake up?
+- **Afternoon**: Is your T-zone shiny by midday?
+- **Products**: What happens when you try new skincare?
+
+**🎯 Still Unsure?**
+Answer these questions:
+1. How does your skin feel after cleansing? (Tight/comfortable/oily)
+2. How often do you break out? (Never/sometimes/often)
+3. How does your skin react to rich moisturizers? (Absorbs well/breaks out/feels greasy)
+4. How visible are your pores? (Barely visible/noticeable/large)
+
+Would you like me to help you analyze your observations, or do you have questions about any specific skin type?"""
+    
+    return guide 

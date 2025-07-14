@@ -106,6 +106,32 @@
       "response": "Important limitations to know:\n\n🚫 **Not a Doctor**: I cannot diagnose medical conditions\n🚫 **Not Emergency Care**: Call 911 for medical emergencies\n🚫 **Not Prescription**: I cannot prescribe medications\n🚫 **Not Replacement**: I don't replace professional medical care\n🚫 **Not Therapy**: I'm not a licensed mental health therapist\n🚫 **Not Legal Advice**: I don't provide legal or insurance guidance\n\n✅ **What I Do**: Provide educational information, general guidance, and support\n✅ **Always Remember**: Consult healthcare providers for medical decisions\n✅ **My Role**: Complement, not replace, professional healthcare\n✅ **Safety First**: I'll always recommend professional care when needed"
     }
   ],
+  "casual_conversation": [
+    {
+      "trigger": "hii",
+      "response": "Hi there! 😊 I'm here and ready to help you with anything related to women's health and skincare. What's on your mind today?"
+    },
+    {
+      "trigger": "what are you doing",
+      "response": "I'm here chatting with you and ready to help! I specialize in women's health and skincare topics. Is there anything specific you'd like to know about? Maybe skincare routines, menstrual health, or general wellness?"
+    },
+    {
+      "trigger": "how are you",
+      "response": "I'm doing great, thank you for asking! 🌸 I'm here to support you with any health or skincare questions. How are you feeling today? Is there anything I can help you with?"
+    },
+    {
+      "trigger": "okay",
+      "response": "Great! Is there anything else I can help you with today? I'm here for any questions about skincare, women's health, or wellness topics."
+    },
+    {
+      "trigger": "thanks",
+      "response": "You're very welcome! 😊 I'm always happy to help. Feel free to ask me anything else about health or skincare anytime!"
+    },
+    {
+      "trigger": "bye",
+      "response": "Take care! 🌸 Remember to prioritize your health and wellbeing. Feel free to come back anytime if you have questions!"
+    }
+  ],
   "conversation_starters": [
     {
       "trigger": "what should i ask",

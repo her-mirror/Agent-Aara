@@ -5,4 +5,6 @@ vectorstore:
 tools:
   skincare: enabled
   health_advice: enabled
-  search: enabled 
+  search: enabled
+verification:
+  enabled: true 

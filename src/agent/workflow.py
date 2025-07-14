@@ -123,5 +123,38 @@ def run_workflow(user_input: str, chat_history: List[Dict[str, str]] = None) -> 
         "route_to": ""
     }
     
-    result = app.invoke(initial_state)
-    return result.get('final_response', 'Sorry, I could not process your request.') 
+    try:
+        result = app.invoke(initial_state)
+        return result.get('final_response', 'Sorry, I could not process your request.')
+    except Exception as e:
+        print(f"Error in workflow: {e}")
+        # Fallback to direct LLM response for any errors
+        try:
+            fallback_context = f"""
+            You are Ara, an empathetic AI agent specializing in women's health and skincare.
+            
+            User input: {user_input}
+            Chat history: {chat_history}
+            
+            The user said: "{user_input}"
+            
+            Please provide an appropriate response. If this is:
+            - A casual greeting/conversation: Respond warmly and redirect to health/skincare topics
+            - A health/skincare question: Provide helpful guidance
+            - Something unclear: Ask for clarification in a supportive way
+            
+            Be empathetic and helpful.
+            """
+            
+            fallback_response = llm.invoke(fallback_context)
+            response_text = fallback_response.content if hasattr(fallback_response, 'content') else str(fallback_response)
+            
+            # Add disclaimer if it's health-related
+            if any(word in user_input.lower() for word in ['health', 'skin', 'period', 'symptom', 'pain', 'advice']):
+                if 'consult a doctor' not in response_text.lower():
+                    response_text += "\n\n_Consult a doctor for medical advice._"
+            
+            return response_text
+        except Exception as fallback_error:
+            print(f"Fallback error: {fallback_error}")
+            return "I'm sorry, I'm having some technical difficulties. Please try asking your question again, and I'll do my best to help you with your health and skincare needs." 

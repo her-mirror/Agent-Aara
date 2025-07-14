@@ -7,6 +7,7 @@ WORKDIR /app
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
     build-essential \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements and install Python dependencies
@@ -22,9 +23,10 @@ ENV PYTHONPATH=/app
 
 # Create necessary directories
 RUN mkdir -p data/vectorstore
+RUN mkdir -p api
 
-# Expose port (for future API development)
+# Expose port for FastAPI
 EXPOSE 8000
 
-# Default command
-CMD ["python", "scripts/run_agent.py"] 
+# Default command (can be overridden)
+CMD ["python", "api/main.py"] 

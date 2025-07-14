@@ -171,6 +171,12 @@ def rule_engine_node(state: Dict[str, Any]) -> Dict[str, Any]:
                 state["final_response"] = capability["response"]
                 return state
         
+        # Check casual conversation
+        for casual in general_rules.get("casual_conversation", []):
+            if casual["trigger"].lower() in user_input:
+                state["final_response"] = casual["response"]
+                return state
+        
         # Check conversation starters
         for starter in general_rules.get("conversation_starters", []):
             if starter["trigger"].lower() in user_input:
