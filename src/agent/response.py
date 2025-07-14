@@ -78,6 +78,13 @@ def response_node(llm):
     """Node that generates the final response with disclaimers."""
     def node(state: Dict[str, Any]) -> Dict[str, Any]:
         user_input = state.get('user_input', '')
+        chat_history = state.get('chat_history', [])
+        
+        print(f"\n📋 CHAT HISTORY IN RESPONSE NODE: {len(chat_history)} messages")
+        if chat_history:
+            for i, msg in enumerate(chat_history[-2:]):  # Show last 2 messages
+                print(f"  {i+1}. User: {msg.get('user', '')[:40]}...")
+                print(f"     Ara: {msg.get('ara', '')[:40]}...")
         
         # Check if we already have a final response from rules or tools
         if state.get('final_response'):

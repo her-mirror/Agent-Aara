@@ -6,6 +6,12 @@ def reasoning_node(llm):
         user_input = state['user_input']
         chat_history = state.get('chat_history', [])
         
+        print(f"\n📋 CHAT HISTORY IN REASONING: {len(chat_history)} messages")
+        if chat_history:
+            for i, msg in enumerate(chat_history[-3:]):  # Show last 3 messages
+                print(f"  {i+1}. User: {msg.get('user', '')[:50]}...")
+                print(f"     Ara: {msg.get('ara', '')[:50]}...")
+        
         # Use LLM to determine intent and next step
         prompt = f"""
         User input: {user_input}
