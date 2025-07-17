@@ -272,13 +272,19 @@ async def chat_stream(request: ChatRequest):
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("--port", type=int, default=8000, help="Port to run the server on")
+    default_port = int(os.environ.get("PORT", "8000"))
+    parser.add_argument("--port", type=int, default=default_port, help="Port to run the server on")
     args = parser.parse_args()
+    
+    # Use environment variables for production deployment
+    port = int(os.environ.get("PORT", str(args.port)))
+    host = os.environ.get("HOST", "0.0.0.0")
+    reload_mode = os.environ.get("ENVIRONMENT", "development") == "development"
     
     uvicorn.run(
         "main:app",
-        host="0.0.0.0",
-        port=args.port,
-        reload=True,
+        host=host,
+        port=port,
+        reload=reload_mode,
         log_level="info"
     ) 

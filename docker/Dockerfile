@@ -17,6 +17,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the rest of the application code
 COPY . .
 
+# Copy the render startup script
+COPY render_start.py ./
+
 # Set environment variables
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONPATH=/app
@@ -29,4 +32,4 @@ RUN mkdir -p api
 EXPOSE 8000
 
 # Default command (can be overridden)
-CMD ["python", "api/main.py"] 
+CMD ["python", "render_start.py"] 

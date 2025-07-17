@@ -15,7 +15,7 @@ products:
         price_range: "$12-15"
         affiliate_link: "https://amzn.to/your-cleanser-link"
         keywords: ["oily skin", "acne", "gentle cleanser", "foaming"]
-        recommended_for: ["oily_skin", "acne_prone", "combination_skin"]
+        recommended_for: ["oily", "acne-prone", "combination"]
         why_recommended: "Contains ceramides to restore skin barrier while effectively removing oil"
       
       - name: "Neutrogena Hydrating Foaming Cleanser" 
@@ -23,17 +23,51 @@ products:
         price_range: "$8-12"
         affiliate_link: "https://amzn.to/your-hydrating-cleanser-link"
         keywords: ["dry skin", "hydrating", "gentle", "hyaluronic acid"]
-        recommended_for: ["dry_skin", "sensitive_skin", "mature_skin"]
+        recommended_for: ["dry", "sensitive", "mature"]
         why_recommended: "Cleanses without stripping natural oils while adding hydration"
+    
+    moisturizers:
+      - name: "Neutrogena Oil-Free Moisture Gel"
+        description: "Lightweight, oil-free moisturizer perfect for combination skin"
+        price_range: "$8-12"
+        affiliate_link: "https://amzn.to/your-moisturizer-link"
+        keywords: ["oil-free", "lightweight", "combination skin", "non-comedogenic"]
+        recommended_for: ["combination", "oily", "acne-prone"]
+        why_recommended: "Provides hydration without adding excess oil to the T-zone, perfect for combination skin"
+      
+      - name: "CeraVe Daily Moisturizing Lotion"
+        description: "Lightweight moisturizer with ceramides and hyaluronic acid"
+        price_range: "$12-16"
+        affiliate_link: "https://amzn.to/your-cerave-moisturizer-link"
+        keywords: ["ceramides", "hyaluronic acid", "gentle", "all-day hydration"]
+        recommended_for: ["combination", "sensitive", "dry"]
+        why_recommended: "Balances hydration for combination skin while supporting the skin barrier"
+    
+    toners:
+      - name: "Paula's Choice 2% BHA Liquid Exfoliant"
+        description: "Gentle salicylic acid toner for T-zone oil control"
+        price_range: "$30-35"
+        affiliate_link: "https://paulaschoice.com/your-bha-link"
+        keywords: ["salicylic acid", "bha", "oil control", "t-zone", "pores"]
+        recommended_for: ["combination", "oily", "acne-prone"]
+        why_recommended: "Perfect for targeting T-zone breakouts while being gentle on drier areas"
     
     serums:
       - name: "The Ordinary Niacinamide 10% + Zinc 1%"
         description: "Serum to reduce appearance of blemishes and congestion"
         price_range: "$7-10"
         affiliate_link: "https://beautylish.com/your-niacinamide-link"
-        keywords: ["acne", "oily skin", "pores", "blemishes"]
-        recommended_for: ["acne_prone", "oily_skin", "large_pores"]
+        keywords: ["acne", "oily skin", "pores", "blemishes", "oil control"]
+        recommended_for: ["acne-prone", "oily", "combination"]
         why_recommended: "Clinical concentration of niacinamide helps control oil production and minimize pores"
+      
+      - name: "The Ordinary Hyaluronic Acid 2% + B5"
+        description: "Hydrating serum for plumping and moisture retention"
+        price_range: "$8-11"
+        affiliate_link: "https://beautylish.com/your-ha-link"
+        keywords: ["hyaluronic acid", "hydration", "plumping", "moisture"]
+        recommended_for: ["combination", "dry", "dehydrated"]
+        why_recommended: "Provides targeted hydration for drier areas without adding oil to the T-zone"
     
     sunscreens:
       - name: "La Roche-Posay Anthelios Ultra Light Sunscreen SPF 60"
@@ -41,7 +75,7 @@ products:
         price_range: "$25-30"
         affiliate_link: "https://dermstore.com/your-sunscreen-link"
         keywords: ["sunscreen", "spf", "protection", "lightweight"]
-        recommended_for: ["all_skin_types", "acne_prone", "sensitive_skin"]
+        recommended_for: ["combination", "acne-prone", "sensitive"]
         why_recommended: "Provides excellent protection without clogging pores or leaving white residue"
 
   health_supplements:

@@ -21,7 +21,8 @@ def reasoning_node(llm):
         1. Skincare (skin type, routine, products)
         2. Health advice (periods, PCOS, symptoms)
         3. Need for web search (latest information, research)
-        4. General query that needs rule checking
+        4. Product suggestions (suggest products, recommend items, based on this)
+        5. General query that needs rule checking
         
         Respond with just the category number.
         """
@@ -31,15 +32,25 @@ def reasoning_node(llm):
             intent = intent_response.content if hasattr(intent_response, 'content') else str(intent_response)
         except Exception as e:
             print(f"Error in reasoning: {e}")
-            intent = "4"  # Default to rule engine
+            intent = "5"  # Default to rule engine
         
         # Add reasoning to intermediate steps
         state['intermediate_steps'].append({'reasoning': intent})
         
-        # Simple routing logic based on keywords and LLM intent
+        # Enhanced routing logic with product suggestion detection
         user_input_lower = user_input.lower()
         
-        if 'skin' in user_input_lower or 'skincare' in user_input_lower or '1' in intent:
+        # Check for explicit product requests first
+        product_keywords = [
+            'suggest product', 'recommend product', 'suggest some product', 
+            'product suggestion', 'product recommendation', 'based on this',
+            'show me product', 'what product', 'which product', 'product for',
+            'suggest something', 'recommend something', 'shopping', 'buy'
+        ]
+        
+        if any(keyword in user_input_lower for keyword in product_keywords) or '4' in intent:
+            state['next_node'] = 'product_suggestion'
+        elif 'skin' in user_input_lower or 'skincare' in user_input_lower or '1' in intent:
             state['next_node'] = 'skincare_tool'
         elif any(word in user_input_lower for word in ['period', 'menstrual', 'pcos', 'health']) or '2' in intent:
             state['next_node'] = 'health_advice_tool'
