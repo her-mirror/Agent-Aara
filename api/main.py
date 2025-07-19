@@ -7,6 +7,13 @@ from typing import List, Dict, Any, Optional
 import sys
 import os
 import uvicorn
+import psutil
+import time
+import logging
+import asyncio
+import json
+from datetime import datetime
+from fastapi.responses import StreamingResponse
 
 # Add project root to Python path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -18,16 +25,151 @@ except ImportError as e:
     print("Make sure all dependencies are installed: pip install -r requirements.txt")
     sys.exit(1)
 
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
 app = FastAPI(
     title="Ara Health Agent API",
     description="AI-powered women's health and skincare assistant",
     version="1.0.0"
 )
 
+# System monitoring functions
+def get_system_metrics():
+    """Get current system resource usage"""
+    try:
+        cpu_percent = psutil.cpu_percent(interval=0.1)
+        memory = psutil.virtual_memory()
+        memory_used_mb = memory.used / (1024 * 1024)
+        memory_total_mb = memory.total / (1024 * 1024)
+        memory_percent = memory.percent
+        
+        process = psutil.Process()
+        process_memory = process.memory_info()
+        process_memory_mb = process_memory.rss / (1024 * 1024)
+        process_cpu_percent = process.cpu_percent()
+        
+        return {
+            "timestamp": datetime.now().isoformat(),
+            "system_cpu_percent": round(cpu_percent, 2),
+            "system_memory_used_mb": round(memory_used_mb, 2),
+            "system_memory_total_mb": round(memory_total_mb, 2),
+            "system_memory_percent": round(memory_percent, 2),
+            "process_memory_mb": round(process_memory_mb, 2),
+            "process_cpu_percent": round(process_cpu_percent, 2)
+        }
+    except Exception as e:
+        logger.error(f"Error getting system metrics: {e}")
+        return {
+            "timestamp": datetime.now().isoformat(),
+            "system_cpu_percent": 0,
+            "system_memory_used_mb": 0,
+            "system_memory_total_mb": 0,
+            "system_memory_percent": 0,
+            "process_memory_mb": 0,
+            "process_cpu_percent": 0,
+            "error": str(e)
+        }
+
+class ChatMetricsTracker:
+    """Track detailed metrics for individual chat sessions"""
+    
+    def __init__(self, conversation_id: str, message: str):
+        self.conversation_id = conversation_id
+        self.message = message
+        self.start_time = time.time()
+        self.metrics_history = []
+        self.peak_metrics = {
+            "cpu": 0,
+            "memory": 0
+        }
+        self.low_metrics = {
+            "cpu": float('inf'),
+            "memory": float('inf')
+        }
+    
+    def capture_metrics(self, stage: str):
+        """Capture metrics at different stages"""
+        metrics = get_system_metrics()
+        metrics["stage"] = stage
+        metrics["elapsed_ms"] = round((time.time() - self.start_time) * 1000, 2)
+        
+        cpu = metrics.get("system_cpu_percent", 0)
+        memory = metrics.get("process_memory_mb", 0)
+        
+        if cpu > self.peak_metrics["cpu"]:
+            self.peak_metrics["cpu"] = cpu
+        if memory > self.peak_metrics["memory"]:
+            self.peak_metrics["memory"] = memory
+            
+        if cpu < self.low_metrics["cpu"]:
+            self.low_metrics["cpu"] = cpu
+        if memory < self.low_metrics["memory"]:
+            self.low_metrics["memory"] = memory
+        
+        self.metrics_history.append(metrics)
+        return metrics
+    
+    def get_summary(self):
+        """Get complete summary of metrics for this chat"""
+        total_duration = round((time.time() - self.start_time) * 1000, 2)
+        
+        return {
+            "conversation_id": self.conversation_id,
+            "message": self.message,
+            "total_duration_ms": total_duration,
+            "stages_count": len(self.metrics_history),
+            "peak_metrics": self.peak_metrics,
+            "low_metrics": self.low_metrics,
+            "metrics_history": self.metrics_history,
+            "summary": {
+                "cpu_range": f"{self.low_metrics['cpu']}% - {self.peak_metrics['cpu']}%",
+                "memory_range": f"{self.low_metrics['memory']:.1f}MB - {self.peak_metrics['memory']:.1f}MB",
+                "performance_rating": "Good" if self.peak_metrics['cpu'] < 70 and self.peak_metrics['memory'] < 500 else "High Usage"
+            }
+        }
+
+# Live monitoring storage
+live_monitoring_clients = set()
+
+async def live_metrics_generator():
+    """Generate live metrics for SSE"""
+    while True:
+        try:
+            metrics = get_system_metrics()
+            yield f"data: {json.dumps(metrics)}\n\n"
+            await asyncio.sleep(1)  # Send metrics every second
+        except Exception as e:
+            yield f"data: {json.dumps({'error': str(e)})}\n\n"
+            await asyncio.sleep(5)
+
+# Middleware for monitoring requests
+@app.middleware("http")
+async def monitor_requests(request: Request, call_next):
+    """Monitor CPU and RAM usage for each request"""
+    start_time = time.time()
+    
+    # Process the request
+    response = await call_next(request)
+    
+    # Add basic metrics to response headers
+    processing_time = round((time.time() - start_time) * 1000, 2)
+    metrics = get_system_metrics()
+    
+    response.headers["X-Processing-Time"] = str(processing_time)
+    response.headers["X-Memory-Usage"] = str(metrics.get('process_memory_mb', 0))
+    response.headers["X-CPU-Usage"] = str(metrics.get('system_cpu_percent', 0))
+    
+    return response
+
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "https://your-nextjs-domain.com"],  # Update with your Next.js domain
+    allow_origins=["http://localhost:3000", "https://your-nextjs-domain.com"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -37,14 +179,12 @@ app.add_middleware(
 @app.exception_handler(RequestValidationError)
 async def validation_exception_handler(request: Request, exc: RequestValidationError):
     """Handle validation errors with detailed error messages"""
-    print(f"Validation error: {exc}")
-    print(f"Request body: {await request.body()}")
+    logger.error(f"Validation error: {exc}")
     return JSONResponse(
         status_code=422,
         content={
             "detail": exc.errors(),
-            "message": "Request validation failed",
-            "body": await request.body() if hasattr(request, 'body') else None
+            "message": "Request validation failed"
         }
     )
 
@@ -57,7 +197,7 @@ class ChatMessage(BaseModel):
 class ChatRequest(BaseModel):
     message: str
     conversation_id: Optional[str] = None
-    chat_history: Optional[List[Dict[str, Any]]] = []  # More flexible - accept any dict format
+    chat_history: Optional[List[Dict[str, Any]]] = []
 
 class ChatResponse(BaseModel):
     response: str
@@ -70,8 +210,9 @@ class HealthStatus(BaseModel):
     version: str
     components: Dict[str, str]
 
-# In-memory storage for conversations (in production, use a proper database)
+# In-memory storage for conversations and metrics
 conversations: Dict[str, List[Dict[str, str]]] = {}
+conversation_metrics: Dict[str, List[Dict[str, Any]]] = {}
 
 @app.get("/", response_model=Dict[str, str])
 async def root():
@@ -87,14 +228,13 @@ async def root():
 async def test_chat(data: Dict[str, Any]):
     """Test endpoint to debug request format"""
     try:
-        print(f"Received test data: {data}")
         return {
             "received": data,
             "status": "success",
             "message": "Data received successfully"
         }
     except Exception as e:
-        print(f"Test endpoint error: {e}")
+        logger.error(f"Test endpoint error: {e}")
         return {
             "error": str(e),
             "status": "error"
@@ -103,16 +243,7 @@ async def test_chat(data: Dict[str, Any]):
 @app.post("/debug-chat-history")
 async def debug_chat_history(request: ChatRequest):
     """Debug endpoint to test chat history parsing"""
-    print(f"\n🔍 DEBUG CHAT HISTORY:")
-    print(f"📨 Full request: {request}")
-    print(f"📨 Request dict: {request.dict()}")
-    
-    if request.chat_history:
-        for i, msg in enumerate(request.chat_history):
-            print(f"\n📨 Message {i+1}:")
-            print(f"  Type: {type(msg)}")
-            print(f"  Value: {msg}")
-            print(f"  Dict representation: {dict(msg) if hasattr(msg, '__dict__') else 'N/A'}")
+    logger.info(f"Debug chat history: {len(request.chat_history) if request.chat_history else 0} messages")
     
     return {
         "message": request.message,
@@ -124,44 +255,39 @@ async def debug_chat_history(request: ChatRequest):
 
 @app.get("/health", response_model=HealthStatus)
 async def health_check():
-    """Health check endpoint"""
+    """Health check endpoint with system metrics"""
+    metrics = get_system_metrics()
+    logger.info("Health check completed")
+    
     return HealthStatus(
         status="healthy",
         version="1.0.0",
         components={
             "workflow": "operational",
             "rules_engine": "operational",
-            "tools": "operational"
+            "tools": "operational",
+            "system_metrics": metrics
         }
     )
 
 @app.post("/chat", response_model=ChatResponse)
 async def chat(request: ChatRequest):
-    """Main chat endpoint"""
+    """Main chat endpoint with individual chat metrics tracking"""
+    
+    conversation_id = request.conversation_id or f"chat_{int(time.time())}"
+    tracker = ChatMetricsTracker(conversation_id, request.message)
+    
     try:
-        print(f"\n🔍 FULL REQUEST DEBUG:")
-        print(f"📨 Message: '{request.message}'")
-        print(f"📨 Conversation ID: '{request.conversation_id}'")
-        print(f"📨 Chat History Type: {type(request.chat_history)}")
-        print(f"📨 Chat History Length: {len(request.chat_history) if request.chat_history else 0}")
+        tracker.capture_metrics("request_received")
+        
         # Convert chat history to the format expected by the workflow
         chat_history = []
         if request.chat_history:
-            print(f"\n📨 INCOMING CHAT HISTORY: {len(request.chat_history)} messages")
-            print(f"📨 RAW CHAT HISTORY: {request.chat_history}")
-            
-            for i, msg in enumerate(request.chat_history):
-                print(f"\n📨 Message {i+1}: {msg}")
-                print(f"📨 Message type: {type(msg)}")
+            for msg in request.chat_history:
+                role = ""
+                content = ""
                 
-                # Handle multiple formats
                 if isinstance(msg, dict):
-                    # Support multiple formats:
-                    # Format 1: {"role": "user", "content": "text"}
-                    # Format 2: {"from": "user", "text": "text"} 
-                    role = ""
-                    content = ""
-                    
                     if "role" in msg:
                         role = msg["role"] or ""
                     elif "from" in msg:
@@ -171,12 +297,7 @@ async def chat(request: ChatRequest):
                         content = msg["content"] or ""
                     elif "text" in msg:
                         content = msg["text"] or ""
-                    
-                    print(f"📨 Dict format - role: '{role}', content: '{content[:50]}...'")
                 else:
-                    role = ""
-                    content = ""
-                    
                     if hasattr(msg, "role") and msg.role:
                         role = str(msg.role)
                     elif hasattr(msg, "from") and msg.from_:
@@ -186,8 +307,6 @@ async def chat(request: ChatRequest):
                         content = str(msg.content)
                     elif hasattr(msg, "text") and msg.text:
                         content = str(msg.text)
-                    
-                    print(f"📨 Object format - role: '{role}', content: '{content[:50]}...'")
                 
                 # Normalize role names
                 if role.lower() in ["user", "human"]:
@@ -195,52 +314,156 @@ async def chat(request: ChatRequest):
                 elif role.lower() in ["assistant", "aara", "ara", "bot", "ai"]:
                     role = "assistant"
                 
-                print(f"  - {role}: {content[:50]}...")
-                
                 if role == "user":
                     chat_history.append({"user": content, "ara": ""})
-                    print(f"✅ Added user message to chat_history")
                 elif role == "assistant" and chat_history:
                     chat_history[-1]["ara"] = content
-                    print(f"✅ Added assistant response to last exchange")
                 elif role == "assistant" and not chat_history:
-                    # First message is assistant - create empty user entry
                     chat_history.append({"user": "", "ara": content})
-                    print(f"✅ Added assistant-first message to chat_history")
-                else:
-                    print(f"❌ Skipped message - role: '{role}', has_previous_exchange: {len(chat_history) > 0}")
         
-        print(f"\n📤 CONVERTED CHAT HISTORY FOR WORKFLOW: {len(chat_history)} exchanges")
-        for i, exchange in enumerate(chat_history[-2:]):  # Show last 2 exchanges
-            print(f"  {i+1}. User: {exchange.get('user', '')[:40]}...")
-            print(f"     Ara: {exchange.get('ara', '')[:40]}...")
+        tracker.capture_metrics("workflow_start")
+        logger.info(f"Processing chat for conversation: {conversation_id}")
         
-        # Run the workflow
         response = run_workflow(request.message, chat_history)
         
-        # Store conversation if conversation_id is provided
-        if request.conversation_id:
-            if request.conversation_id not in conversations:
-                conversations[request.conversation_id] = []
-            conversations[request.conversation_id].append({
-                "user": request.message,
-                "ara": response
-            })
+        tracker.capture_metrics("workflow_completed")
+        
+        # Store conversation
+        if conversation_id not in conversations:
+            conversations[conversation_id] = []
+        conversations[conversation_id].append({
+            "user": request.message,
+            "ara": response
+        })
+        
+        # Store metrics
+        if conversation_id not in conversation_metrics:
+            conversation_metrics[conversation_id] = []
+        
+        metrics_summary = tracker.get_summary()
+        conversation_metrics[conversation_id].append(metrics_summary)
+        
+        logger.info(f"Chat completed - Duration: {metrics_summary['total_duration_ms']}ms, Performance: {metrics_summary['summary']['performance_rating']}")
         
         return ChatResponse(
             response=response,
-            conversation_id=request.conversation_id,
+            conversation_id=conversation_id,
             status="success",
             metadata={
                 "message_length": len(response),
-                "conversation_length": len(conversations.get(request.conversation_id, []))
+                "conversation_length": len(conversations.get(conversation_id, [])),
+                "individual_chat_metrics": metrics_summary,
+                "performance_summary": {
+                    "total_duration_ms": metrics_summary['total_duration_ms'],
+                    "peak_cpu_percent": metrics_summary['peak_metrics']['cpu'],
+                    "peak_memory_mb": metrics_summary['peak_metrics']['memory'],
+                    "low_cpu_percent": metrics_summary['low_metrics']['cpu'],
+                    "low_memory_mb": metrics_summary['low_metrics']['memory'],
+                    "performance_rating": metrics_summary['summary']['performance_rating'],
+                    "stages_tracked": metrics_summary['stages_count']
+                }
             }
         )
     
     except Exception as e:
-        print(f"Error in chat endpoint: {e}")
-        print(f"Request data: {request}")
+        logger.error(f"Error in chat endpoint: {e}")
         raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+
+@app.get("/live-metrics")
+async def live_metrics():
+    """Live system metrics stream using Server-Sent Events"""
+    return StreamingResponse(
+        live_metrics_generator(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "Cache-Control"
+        }
+    )
+
+@app.get("/system-metrics")
+async def get_system_metrics_endpoint():
+    """Get current system resource usage metrics"""
+    metrics = get_system_metrics()
+    logger.info("System metrics requested")
+    
+    return {
+        "timestamp": time.time(),
+        "metrics": metrics,
+        "status": "success"
+    }
+
+@app.get("/conversation-metrics/{conversation_id}")
+async def get_conversation_metrics(conversation_id: str):
+    """Get detailed metrics for a specific conversation"""
+    if conversation_id not in conversation_metrics:
+        raise HTTPException(status_code=404, detail="Conversation metrics not found")
+    
+    metrics = conversation_metrics[conversation_id]
+    
+    total_chats = len(metrics)
+    total_duration = sum(m['total_duration_ms'] for m in metrics)
+    avg_duration = total_duration / total_chats if total_chats > 0 else 0
+    
+    peak_cpu_overall = max(m['peak_metrics']['cpu'] for m in metrics) if metrics else 0
+    peak_memory_overall = max(m['peak_metrics']['memory'] for m in metrics) if metrics else 0
+    
+    logger.info(f"Conversation metrics requested for: {conversation_id}")
+    
+    return {
+        "conversation_id": conversation_id,
+        "total_chats": total_chats,
+        "aggregate_stats": {
+            "total_duration_ms": total_duration,
+            "average_duration_ms": round(avg_duration, 2),
+            "peak_cpu_overall": peak_cpu_overall,
+            "peak_memory_overall": round(peak_memory_overall, 2)
+        },
+        "individual_chats": metrics,
+        "status": "success"
+    }
+
+@app.get("/all-conversation-metrics")
+async def get_all_conversation_metrics():
+    """Get metrics summary for all conversations"""
+    if not conversation_metrics:
+        return {
+            "total_conversations": 0,
+            "conversations": [],
+            "status": "success"
+        }
+    
+    conversation_summaries = []
+    
+    for conv_id, metrics in conversation_metrics.items():
+        total_chats = len(metrics)
+        total_duration = sum(m['total_duration_ms'] for m in metrics)
+        avg_duration = total_duration / total_chats if total_chats > 0 else 0
+        peak_cpu = max(m['peak_metrics']['cpu'] for m in metrics) if metrics else 0
+        peak_memory = max(m['peak_metrics']['memory'] for m in metrics) if metrics else 0
+        
+        conversation_summaries.append({
+            "conversation_id": conv_id,
+            "total_chats": total_chats,
+            "total_duration_ms": total_duration,
+            "average_duration_ms": round(avg_duration, 2),
+            "peak_cpu_percent": peak_cpu,
+            "peak_memory_mb": round(peak_memory, 2),
+            "last_chat_time": metrics[-1]['metrics_history'][-1]['timestamp'] if metrics else None
+        })
+    
+    conversation_summaries.sort(key=lambda x: x.get('last_chat_time', ''), reverse=True)
+    
+    logger.info(f"All conversation metrics requested - {len(conversation_summaries)} conversations")
+    
+    return {
+        "total_conversations": len(conversation_summaries),
+        "total_individual_chats": sum(s['total_chats'] for s in conversation_summaries),
+        "conversations": conversation_summaries,
+        "status": "success"
+    }
 
 @app.get("/conversations/{conversation_id}")
 async def get_conversation(conversation_id: str):
@@ -265,7 +488,6 @@ async def delete_conversation(conversation_id: str):
 @app.post("/chat/stream")
 async def chat_stream(request: ChatRequest):
     """Streaming chat endpoint (for future implementation)"""
-    # Placeholder for streaming functionality
     response = await chat(request)
     return response
 
@@ -276,7 +498,6 @@ if __name__ == "__main__":
     parser.add_argument("--port", type=int, default=default_port, help="Port to run the server on")
     args = parser.parse_args()
     
-    # Use environment variables for production deployment
     port = int(os.environ.get("PORT", str(args.port)))
     host = os.environ.get("HOST", "0.0.0.0")
     reload_mode = os.environ.get("ENVIRONMENT", "development") == "development"
