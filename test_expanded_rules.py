@@ -38,7 +38,7 @@ def main():
         # Agent Info (expanded)
         ("Agent Info - Who Are You", "who are you"),
         ("Agent Info - Capabilities", "what can you do"),
-        ("Agent Info - Ara Features", "ara features"),
+        ("Agent Info - Aara Features", "Aara features"),
         
         # Platform Info (expanded)
         ("Platform Info - HerMirror", "what is hermirror"),

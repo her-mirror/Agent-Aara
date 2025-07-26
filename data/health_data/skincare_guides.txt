@@ -1,11 +1,11 @@
 COMPREHENSIVE SKINCARE GUIDE
 
-=== SKIN TYPES AND CHARACTERISTICS ===
+=== SKIN TYPES AND CHAaraCTERISTICS ===
 
 OILY SKIN:
-Characteristics:
+ChAaracteristics:
 - Enlarged, visible pores
-- Shiny appearance, especially T-zone
+- Shiny appeAarance, especially T-zone
 - Prone to blackheads and acne
 - Makeup may not last long
 - Less prone to wrinkles initially
@@ -38,11 +38,11 @@ Key Ingredients:
 - Clay (in masks)
 
 DRY SKIN:
-Characteristics:
+ChAaracteristics:
 - Tight, rough feeling
 - Flaking or scaling
 - Fine lines more visible
-- Dull appearance
+- Dull appeAarance
 - May be itchy or irritated
 
 Causes:
@@ -75,7 +75,7 @@ Key Ingredients:
 - Lactic acid (gentle exfoliation)
 
 COMBINATION SKIN:
-Characteristics:
+ChAaracteristics:
 - Oily T-zone (forehead, nose, chin)
 - Normal to dry cheeks
 - May have enlarged pores in T-zone
@@ -101,7 +101,7 @@ Evening:
 3. Appropriate moisturizers for each area
 
 SENSITIVE SKIN:
-Characteristics:
+ChAaracteristics:
 - Reacts easily to products or environment
 - Redness, burning, or stinging
 - May have visible blood vessels
@@ -135,7 +135,7 @@ Key Ingredients:
 - Allantoin
 
 NORMAL SKIN:
-Characteristics:
+ChAaracteristics:
 - Balanced oil production
 - Small pores
 - Smooth texture
@@ -205,7 +205,7 @@ Prevention:
 - Gentle skincare routine
 
 ROSACEA:
-Characteristics:
+ChAaracteristics:
 - Persistent redness
 - Visible blood vessels
 - Bumps and pimples
@@ -226,7 +226,7 @@ Management:
 - Avoid known triggers
 
 ECZEMA (ATOPIC DERMATITIS):
-Characteristics:
+ChAaracteristics:
 - Dry, itchy patches
 - Red, inflamed skin
 - May weep or crust
@@ -282,7 +282,7 @@ Beta Hydroxy Acid (BHA):
 - Best for: Oily, acne-prone skin
 
 Niacinamide:
-- Benefits: Oil control, pore appearance, brightening
+- Benefits: Oil control, pore appeAarance, brightening
 - Usage: Morning or evening
 - Concentration: 2-10%
 - Well-tolerated by most skin types
@@ -380,7 +380,7 @@ Types:
 - Soothing toners (sensitive skin)
 
 SERUMS:
-Characteristics:
+ChAaracteristics:
 - High concentration of active ingredients
 - Lightweight, fast-absorbing
 - Target specific concerns
@@ -635,7 +635,7 @@ MYTH: Expensive products are always better
 TRUTH: Effective ingredients matter more than price
 
 MYTH: Natural ingredients are always safer
-TRUTH: Natural doesn't guarantee safety or effectiveness
+TRUTH: Natural doesn't guAarantee safety or effectiveness
 
 MYTH: You need many products for good skin
 TRUTH: Simple, consistent routines often work best

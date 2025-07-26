@@ -95,7 +95,7 @@ Popular programs for health/skincare:
 
 **User**: "I have oily skin with acne. What routine should I use?"
 
-**Ara**: "For oily, acne-prone skin, I recommend: morning cleanser with salicylic acid, oil-free moisturizer, and non-comedogenic sunscreen..."
+**Aara**: "For oily, acne-prone skin, I recommend: morning cleanser with salicylic acid, oil-free moisturizer, and non-comedogenic sunscreen..."
 
 **💡 Product Suggestions Based on Our Conversation:**
 
@@ -105,7 +105,7 @@ Popular programs for health/skincare:
 [Shop Here 🛒](https://amzn.to/your-link)
 
 **2. The Ordinary Niacinamide 10% + Zinc 1%** ($7-10)
-*Serum to reduce appearance of blemishes and congestion*
+*Serum to reduce appeAarance of blemishes and congestion*
 **Why I recommend this:** Clinical concentration of niacinamide helps control oil production
 [Shop Here 🛒](https://beautylish.com/your-link)
 

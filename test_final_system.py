@@ -24,10 +24,10 @@ def test_enhanced_greetings():
         try:
             result = run_workflow(greeting)
             print(f"\n💬 User: {greeting}")
-            print(f"🌸 Ara: {result[:150]}...")
+            print(f"🌸 Aara: {result[:150]}...")
             
             # Check if it's dynamic (not the old static response)
-            if "I'm Ara, your supportive AI assistant" in result:
+            if "I'm Aara, your supportive AI assistant" in result:
                 print("  ⚠️  Still using static response")
             else:
                 print("  ✅ Dynamic personalized response!")
@@ -49,7 +49,7 @@ def test_crisis_responses():
         try:
             result = run_workflow(crisis)
             print(f"\n💬 User: {crisis}")
-            print(f"🌸 Ara: {result[:200]}...")
+            print(f"🌸 Aara: {result[:200]}...")
             
             # Check for key crisis response elements
             if "988" in result and ("concerned" in result.lower() or "help" in result.lower()):
@@ -66,7 +66,7 @@ def test_regular_functionality():
     
     regular_tests = [
         "who are you",
-        "what is ara", 
+        "what is Aara", 
         "help"
     ]
     
@@ -74,7 +74,7 @@ def test_regular_functionality():
         try:
             result = run_workflow(test)
             print(f"\n💬 User: {test}")
-            print(f"🌸 Ara: {result[:100]}...")
+            print(f"🌸 Aara: {result[:100]}...")
             print("  ✅ Working correctly")
                 
         except Exception as e:

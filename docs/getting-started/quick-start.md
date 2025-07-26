@@ -1,8 +1,8 @@
 # Quick Start Guide
 
-## 🚀 Get Ara Running in 5 Minutes
+## 🚀 Get Aara Running in 5 Minutes
 
-This guide will help you set up and run the Ara Health Agent locally in just a few minutes.
+This guide will help you set up and run the Aara Health Agent locally in just a few minutes.
 
 ## 📋 Prerequisites
 
@@ -18,8 +18,8 @@ Before you begin, ensure you have:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-org/aara-health-agent.git
-cd aara-health-agent
+git clone https://github.com/your-org/aAara-health-agent.git
+cd aAara-health-agent
 ```
 
 ### 2. Create Virtual Environment
@@ -61,12 +61,12 @@ OPENAI_MODEL=gpt-4
 TAVILY_API_KEY=your_tavily_api_key_here
 
 # Agent Configuration
-AGENT_NAME=Ara
+AGENT_NAME=Aara
 AGENT_DESCRIPTION=Your AI companion for women's health and skincare
 
 # Logging Configuration
 LOG_LEVEL=INFO
-LOG_FILE=logs/ara.log
+LOG_FILE=logs/Aara.log
 ```
 
 ### 5. Initialize the Vector Store
@@ -86,7 +86,7 @@ python scripts/run_agent.py
 Once the agent is running, you'll see:
 
 ```
-🌸 Ara Health Agent Started
+🌸 Aara Health Agent Started
 Type 'quit' to exit, 'help' for commands
 
 You: 
@@ -96,22 +96,22 @@ Try these sample interactions:
 
 ### Basic Greeting
 ```
-You: Hello Ara!
-Ara: Hello! 🌸 I'm Ara, your AI companion for women's health and skincare. 
+You: Hello Aara!
+Aara: Hello! 🌸 I'm Aara, your AI companion for women's health and skincare. 
 I'm here to provide personalized, empathetic support for your wellness journey...
 ```
 
 ### Health Question
 ```
 You: I'm having irregular periods, what should I know?
-Ara: I understand irregular periods can be concerning. Let me share some 
+Aara: I understand irregular periods can be concerning. Let me share some 
 important information about menstrual irregularities...
 ```
 
 ### Skincare Query
 ```
 You: What skincare routine is best for sensitive skin?
-Ara: For sensitive skin, I recommend a gentle, minimalist approach. 
+Aara: For sensitive skin, I recommend a gentle, minimalist approach. 
 Here's a personalized routine that can help...
 ```
 
@@ -136,7 +136,7 @@ Here's a personalized routine that can help...
 ## 📁 Project Structure Overview
 
 ```
-aara-health-agent/
+aAara-health-agent/
 ├── src/agent/              # Core agent logic
 │   ├── workflow.py         # LangGraph workflow
 │   ├── reasoning.py        # AI reasoning logic
@@ -163,7 +163,7 @@ aara-health-agent/
 
 ```yaml
 agent:
-  name: "Ara"
+  name: "Aara"
   personality: "empathetic"
   response_style: "supportive"
   max_tokens: 1000
@@ -196,7 +196,7 @@ handlers:
     class: logging.FileHandler
     level: DEBUG
     formatter: default
-    filename: logs/ara.log
+    filename: logs/Aara.log
 ```
 
 ## 🧪 Testing Your Installation
@@ -274,11 +274,11 @@ python scripts/run_agent.py --debug
 
 ## 📚 Next Steps
 
-Now that Ara is running, explore these resources:
+Now that Aara is running, explore these resources:
 
-1. **[Architecture Overview](../architecture/system-overview.md)** - Understand how Ara works
+1. **[Architecture Overview](../architecture/system-overview.md)** - Understand how Aara works
 2. **[Rules Documentation](../rules/overview.md)** - Learn about the rule system
-3. **[Adding Custom Rules](../development/adding-rules.md)** - Customize Ara's behavior
+3. **[Adding Custom Rules](../development/adding-rules.md)** - Customize Aara's behavior
 4. **[Tool Development](../development/creating-tools.md)** - Build new capabilities
 5. **[API Reference](../api/workflow.md)** - Integrate with other systems
 
@@ -286,7 +286,7 @@ Now that Ara is running, explore these resources:
 
 If you encounter issues:
 
-1. **Check the logs**: `logs/ara.log`
+1. **Check the logs**: `logs/Aara.log`
 2. **Review troubleshooting**: [Common Issues](../troubleshooting/common-issues.md)
 3. **Run tests**: Verify your installation with test suite
 4. **GitHub Issues**: Report bugs and request features
@@ -294,22 +294,22 @@ If you encounter issues:
 
 ## 🎉 Success!
 
-You now have Ara running locally! The agent is ready to provide empathetic, personalized health and skincare guidance. Try different types of questions to explore Ara's capabilities.
+You now have Aara running locally! The agent is ready to provide empathetic, personalized health and skincare guidance. Try different types of questions to explore Aara's capabilities.
 
 ### Sample Conversation Flow
 
 ```
-You: Hi Ara, I'm new here
-Ara: Welcome! I'm so glad you're here. I'm Ara, your AI companion for women's 
+You: Hi Aara, I'm new here
+Aara: Welcome! I'm so glad you're here. I'm Aara, your AI companion for women's 
 health and skincare. I'm here to provide personalized, empathetic support...
 
 You: I have acne-prone skin and need a routine
-Ara: I understand dealing with acne can be frustrating. Let me help you build 
+Aara: I understand dealing with acne can be frustrating. Let me help you build 
 a gentle yet effective routine for acne-prone skin...
 
 You: What about hormonal acne?
-Ara: Hormonal acne is very common and often related to menstrual cycles. 
+Aara: Hormonal acne is very common and often related to menstrual cycles. 
 Here's what you should know about managing hormonal breakouts...
 ```
 
-Welcome to your journey with Ara! 🌸 
+Welcome to your journey with Aara! 🌸 

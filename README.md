@@ -1,6 +1,6 @@
-# Ara: Women's Health & Skincare AI Agent
+# Aara: Women's Health & Skincare AI Agent
 
-Ara is an empathetic AI agent focused on women's health and skincare, built with LangGraph, LangChain, and a rule-based system for safe, accurate, and personalized responses. Ara answers queries about women's health (e.g., PCOS, menstrual cycles) and skincare (e.g., routines for oily skin), uses real-time web search, and maintains conversational memory for tailored advice.
+Aara is an empathetic AI agent focused on women's health and skincare, built with LangGraph, LangChain, and a rule-based system for safe, accurate, and personalized responses. Aara answers queries about women's health (e.g., PCOS, menstrual cycles) and skincare (e.g., routines for oily skin), uses real-time web search, and maintains conversational memory for tailored advice.
 
 ---
 
@@ -16,7 +16,7 @@ Ara is an empathetic AI agent focused on women's health and skincare, built with
 
 ## Project Structure
 ```
-aara-health-agent/
+aAara-health-agent/
 ├── src/
 │   ├── agent/
 │   │   ├── workflow.py
@@ -68,7 +68,7 @@ aara-health-agent/
 ### 1. Clone the Repository
 ```bash
 git clone <repo-url>
-cd aara-health-agent
+cd aAara-health-agent
 ```
 
 ### 2. Install Dependencies
@@ -123,13 +123,13 @@ pytest tests/
 ---
 
 ## Safety & Disclaimers
-- Ara always appends: _"Consult a doctor for medical advice."_
+- Aara always appends: _"Consult a doctor for medical advice."_
 - Emergency queries (e.g., "severe pain") are flagged and redirected.
 - All advice is informational, not a substitute for professional care.
 
 ---
 
-## Extending Ara
+## Extending Aara
 - Add new rules in `rules/` JSON files.
 - Add new tools in `tools/`.
 - Add new data in `data/health_data/` and re-run `setup_vectorstore.py`.

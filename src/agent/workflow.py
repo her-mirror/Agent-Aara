@@ -131,7 +131,7 @@ def run_workflow(user_input: str, chat_history: List[Dict[str, str]] = None) -> 
         # Fallback to direct LLM response for any errors
         try:
             fallback_context = f"""
-            You are Ara, an empathetic AI agent specializing in women's health and skincare.
+            You are Aara, an empathetic AI agent specializing in women's health and skincare.
             
             User input: {user_input}
             Chat history: {chat_history}

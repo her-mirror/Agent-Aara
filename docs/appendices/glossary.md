@@ -5,12 +5,12 @@
 ### A
 
 **Agent**
-: An AI system designed to interact with users and provide assistance. In this context, Ara is the health agent focused on women's health and skincare.
+: An AI system designed to interact with users and provide assistance. In this context, Aara is the health agent focused on women's health and skincare.
 
 **API (Application Programming Interface)**
 : A set of protocols and tools for building software applications, allowing different software components to communicate.
 
-**Ara**
+**Aara**
 : The name of the AI health agent. Derived from the Sanskrit word meaning "swift" or "quickly," representing fast, responsive health support.
 
 ### C
@@ -19,7 +19,7 @@
 : An open-source vector database used for storing and retrieving embeddings for semantic search functionality.
 
 **Conversation State**
-: The current state of a user's interaction with Ara, including chat history, context, and processing information.
+: The current state of a user's interaction with Aara, including chat history, context, and processing information.
 
 **Crisis Intervention**
 : Immediate response protocols for users experiencing mental health crises or emergency situations.
@@ -35,20 +35,20 @@
 ### G
 
 **GPT-4**
-: Generative Pre-trained Transformer 4, the large language model used by Ara for natural language understanding and generation.
+: Generative Pre-trained Transformer 4, the large language model used by Aara for natural language understanding and generation.
 
 ### H
 
 **Health Advice Tool**
-: Specialized component of Ara that provides guidance on women's health topics including menstrual health, PCOS, fertility, and hormonal issues.
+: Specialized component of Aara that provides guidance on women's health topics including menstrual health, PCOS, fertility, and hormonal issues.
 
 **HerMirror**
-: The platform hosting the Ara Health Agent, focused on women's health and wellness.
+: The platform hosting the Aara Health Agent, focused on women's health and wellness.
 
 ### L
 
 **LangGraph**
-: A framework for building stateful, multi-actor applications with LLMs, used to orchestrate Ara's workflow.
+: A framework for building stateful, multi-actor applications with LLMs, used to orchestrate Aara's workflow.
 
 **LLM (Large Language Model)**
 : AI models trained on vast amounts of text data to understand and generate human-like text.
@@ -61,7 +61,7 @@
 ### P
 
 **PCOS (Polycystic Ovary Syndrome)**
-: A hormonal disorder affecting women of reproductive age, one of Ara's specialized health topics.
+: A hormonal disorder affecting women of reproductive age, one of Aara's specialized health topics.
 
 ### R
 
@@ -88,7 +88,7 @@
 ### T
 
 **Tavily**
-: Search API service used by Ara to retrieve real-time information and current research.
+: Search API service used by Aara to retrieve real-time information and current research.
 
 **Tool**
 : Specialized components that perform specific functions like health advice, skincare analysis, or web search.
@@ -113,7 +113,7 @@
 ### A
 
 **Acne**
-: Skin condition characterized by pimples, blackheads, and cysts, often hormonal in nature.
+: Skin condition chAaracterized by pimples, blackheads, and cysts, often hormonal in nature.
 
 **Amenorrhea**
 : Absence of menstrual periods, which can indicate various health conditions.
@@ -265,7 +265,7 @@
 ### C
 
 **Configuration**
-: Settings that control how Ara behaves, stored in YAML files and environment variables.
+: Settings that control how Aara behaves, stored in YAML files and environment variables.
 
 **Caching**
 : Storing frequently accessed data to improve response times.
@@ -273,7 +273,7 @@
 ### D
 
 **Docker**
-: Containerization platform used for deploying Ara in isolated environments.
+: Containerization platform used for deploying Aara in isolated environments.
 
 ### E
 
@@ -293,12 +293,12 @@
 ### S
 
 **Session**
-: A conversation instance between a user and Ara, maintaining context across interactions.
+: A conversation instance between a user and Aara, maintaining context across interactions.
 
 ### U
 
 **UTF-8**
-: Unicode character encoding that supports emojis and international characters.
+: Unicode chAaracter encoding that supports emojis and international chAaracters.
 
 ### V
 
@@ -312,7 +312,7 @@
 ### A
 
 **Access Control**
-: System for managing who can use Ara and what features they can access.
+: System for managing who can use Aara and what features they can access.
 
 ### C
 
@@ -322,12 +322,12 @@
 ### D
 
 **Disclaimer**
-: Legal notice clarifying that Ara's advice is educational and not medical diagnosis.
+: Legal notice clarifying that Aara's advice is educational and not medical diagnosis.
 
 ### E
 
 **Emergency Response**
-: Immediate actions taken when Ara detects urgent medical or mental health situations.
+: Immediate actions taken when Aara detects urgent medical or mental health situations.
 
 ### R
 
@@ -364,7 +364,7 @@
 ### U
 
 **Usage Patterns**
-: Analysis of how users interact with Ara to improve the experience.
+: Analysis of how users interact with Aara to improve the experience.
 
 ---
 
@@ -383,11 +383,11 @@
 ### I
 
 **Integration**
-: Connecting Ara with other systems or services.
+: Connecting Aara with other systems or services.
 
 ### P
 
-**Parallel Processing**
+**PAarallel Processing**
 : Executing multiple operations simultaneously for improved performance.
 
 ### S
@@ -397,4 +397,4 @@
 
 ---
 
-*This glossary is continuously updated as new features and terms are introduced to the Ara Health Agent system.* 
+*This glossary is continuously updated as new features and terms are introduced to the Aara Health Agent system.* 

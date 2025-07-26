@@ -178,7 +178,7 @@ DATABASE_URL=sqlite:///users.db
 
 def main():
     """Run all tests"""
-    print("🌸 Ara Health Agent - Authentication System Test")
+    print("🌸 Aara Health Agent - Authentication System Test")
     print("=" * 50)
     
     # Check dependencies first

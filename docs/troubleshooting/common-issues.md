@@ -2,7 +2,7 @@
 
 ## 🔧 Overview
 
-This guide covers the most common issues users encounter with the Ara Health Agent and provides step-by-step solutions to resolve them.
+This guide covers the most common issues users encounter with the Aara Health Agent and provides step-by-step solutions to resolve them.
 
 ## 🚨 Installation Issues
 
@@ -52,8 +52,8 @@ pip install virtualenv
 python -m venv /full/path/to/venv
 
 # Alternative: Use conda
-conda create -n ara-env python=3.9
-conda activate ara-env
+conda create -n Aara-env python=3.9
+conda activate Aara-env
 ```
 
 #### Issue: "venv\Scripts\activate not found"
@@ -197,7 +197,7 @@ chmod -R 755 data/vectorstore/
 
 #### Issue: "Collection not found"
 ```
-ERROR: Collection 'ara_knowledge' not found
+ERROR: Collection 'Aara_knowledge' not found
 ```
 
 **Solution:**
@@ -235,7 +235,7 @@ python scripts/setup_vectorstore.py
 python -c "
 import chromadb
 client = chromadb.PersistentClient(path='data/vectorstore')
-collection = client.get_collection('ara_knowledge')
+collection = client.get_collection('Aara_knowledge')
 print(f'Collection has {collection.count()} documents')
 "
 ```
@@ -265,9 +265,9 @@ echo 'export PYTHONIOENCODING=utf-8' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-#### Issue: "Emoji characters not displaying"
+#### Issue: "Emoji chAaracters not displaying"
 ```
-ERROR: 'ascii' codec can't encode character
+ERROR: 'ascii' codec can't encode chAaracter
 ```
 
 **Solution:**
@@ -462,7 +462,7 @@ with open('config/settings.yaml', 'r') as f:
 # Common YAML issues:
 # - Incorrect indentation (use spaces, not tabs)
 # - Missing colons
-# - Unquoted special characters
+# - Unquoted special chAaracters
 ```
 
 ### Environment Variable Issues
@@ -502,7 +502,7 @@ ERROR: ModuleNotFoundError in tests
 **Solution:**
 ```bash
 # Run tests from project root
-cd aara-health-agent
+cd aAara-health-agent
 python -m pytest tests/ -v
 
 # Add project root to Python path
@@ -629,10 +629,10 @@ python quick_test.py
 
 If you're still experiencing issues:
 
-1. **Check logs**: `logs/ara.log` and `logs/ara_errors.log`
-2. **Run diagnostics**: `python -m ara.diagnostics`
-3. **Create issue**: [GitHub Issues](https://github.com/your-org/aara-health-agent/issues)
-4. **Join discussions**: [GitHub Discussions](https://github.com/your-org/aara-health-agent/discussions)
+1. **Check logs**: `logs/Aara.log` and `logs/Aara_errors.log`
+2. **Run diagnostics**: `python -m Aara.diagnostics`
+3. **Create issue**: [GitHub Issues](https://github.com/your-org/aAara-health-agent/issues)
+4. **Join discussions**: [GitHub Discussions](https://github.com/your-org/aAara-health-agent/discussions)
 5. **Contact support**: support@hermirror.com
 
 ### Diagnostic Information
@@ -653,7 +653,7 @@ pip list | grep -E "(langchain|openai|chromadb)"
 cat config/settings.yaml
 
 # Recent logs
-tail -50 logs/ara.log
+tail -50 logs/Aara.log
 ```
 
 Remember: Most issues are configuration-related and can be resolved by carefully following the installation and setup guides. Don't hesitate to ask for help! 

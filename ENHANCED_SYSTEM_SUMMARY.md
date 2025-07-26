@@ -2,7 +2,7 @@
 
 ## 🎯 Overview
 
-This document outlines the comprehensive enhancements made to the Ara Health Agent's greeting and crisis response system, addressing the key issues of static responses and inadequate mental health crisis handling.
+This document outlines the comprehensive enhancements made to the Aara Health Agent's greeting and crisis response system, addressing the key issues of static responses and inadequate mental health crisis handling.
 
 ## 🔧 Key Improvements
 
@@ -82,13 +82,13 @@ User Greeting → Rules Engine → LLM + Specialized Prompt → Personalized Res
 **Before (Static):**
 ```
 User: "Hey"
-Ara: "Hey! Welcome! I'm Ara, your friendly AI companion for women's health and skincare. I can help you with skincare routines, period tracking, PCOS information, and more. What's on your mind today?"
+Aara: "Hey! Welcome! I'm Aara, your friendly AI companion for women's health and skincare. I can help you with skincare routines, period tracking, PCOS information, and more. What's on your mind today?"
 ```
 
 **After (Dynamic):**
 ```
 User: "Hey"
-Ara: "Hey there! 😊 I'm excited to help you with whatever you need - what would you like to explore?"
+Aara: "Hey there! 😊 I'm excited to help you with whatever you need - what would you like to explore?"
 ```
 
 ## 🚨 Crisis Response Enhancement Details
@@ -110,13 +110,13 @@ Ara: "Hey there! 😊 I'm excited to help you with whatever you need - what woul
 **Before (Static):**
 ```
 User: "I want to kill myself"
-Ara: "If you're having thoughts of suicide, please reach out for help immediately. National Suicide Prevention Lifeline: 988, Crisis Text Line: Text HOME to 741741, or call 911."
+Aara: "If you're having thoughts of suicide, please reach out for help immediately. National Suicide Prevention Lifeline: 988, Crisis Text Line: Text HOME to 741741, or call 911."
 ```
 
 **After (Enhanced):**
 ```
 User: "I want to kill myself"
-Ara: "I'm very concerned about you, and I want you to know that reaching out takes incredible courage. What you're feeling right now is overwhelming, but you don't have to face this alone.
+Aara: "I'm very concerned about you, and I want you to know that reaching out takes incredible courage. What you're feeling right now is overwhelming, but you don't have to face this alone.
 
 **🚨 Please get help right now:**
 - **988 Suicide & Crisis Lifeline**: Call or text 988 (available 24/7)

@@ -1,6 +1,6 @@
-# 🚀 Ara Health Agent - Next.js Integration & Deployment Guide
+# 🚀 Aara Health Agent - Next.js Integration & Deployment Guide
 
-This guide will help you host and integrate your Ara Health Agent with a Next.js frontend application.
+This guide will help you host and integrate your Aara Health Agent with a Next.js frontend application.
 
 ## 📋 Overview
 
@@ -42,7 +42,7 @@ curl http://localhost:8000/health
 # Chat endpoint test
 curl -X POST http://localhost:8000/chat \
   -H "Content-Type: application/json" \
-  -d '{"message": "Hello Ara!"}'
+  -d '{"message": "Hello Aara!"}'
 ```
 
 ## 🎨 Phase 2: Frontend Setup
@@ -66,7 +66,7 @@ Create `frontend/.env.local`:
 
 ```env
 NEXT_PUBLIC_API_URL=http://localhost:8000
-NEXT_PUBLIC_APP_NAME=Ara Health Agent
+NEXT_PUBLIC_APP_NAME=Aara Health Agent
 NEXT_PUBLIC_APP_VERSION=1.0.0
 ```
 
@@ -89,9 +89,9 @@ Create `docker-compose.full.yml`:
 ```yaml
 version: '3.8'
 services:
-  ara-api:
+  Aara-api:
     build: .
-    container_name: ara-api
+    container_name: Aara-api
     env_file:
       - .env
     volumes:
@@ -101,27 +101,27 @@ services:
     ports:
       - "8000:8000"
     networks:
-      - ara-network
+      - Aara-network
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
       interval: 30s
       timeout: 10s
       retries: 3
 
-  ara-frontend:
+  Aara-frontend:
     build: ./frontend
-    container_name: ara-frontend
+    container_name: Aara-frontend
     environment:
-      - NEXT_PUBLIC_API_URL=http://ara-api:8000
+      - NEXT_PUBLIC_API_URL=http://Aara-api:8000
     ports:
       - "3000:3000"
     depends_on:
-      - ara-api
+      - Aara-api
     networks:
-      - ara-network
+      - Aara-network
 
 networks:
-  ara-network:
+  Aara-network:
     driver: bridge
 ```
 
@@ -203,13 +203,13 @@ docker-compose -f docker-compose.full.yml up -d --build
 Create `frontend/.do/app.yaml`:
 
 ```yaml
-name: ara-health-agent
+name: Aara-health-agent
 services:
-- name: ara-api
+- name: Aara-api
   source_dir: /
   dockerfile_path: Dockerfile
   github:
-    repo: your-username/ara-health-agent
+    repo: your-username/Aara-health-agent
     branch: main
   http_port: 8000
   instance_count: 1
@@ -222,18 +222,18 @@ services:
     value: your-tavily-key
     type: SECRET
 
-- name: ara-frontend
+- name: Aara-frontend
   source_dir: /frontend
   dockerfile_path: frontend/Dockerfile
   github:
-    repo: your-username/ara-health-agent
+    repo: your-username/Aara-health-agent
     branch: main
   http_port: 3000
   instance_count: 1
   instance_size_slug: basic-xxs
   envs:
   - key: NEXT_PUBLIC_API_URL
-    value: ${ara-api.PUBLIC_URL}
+    value: ${Aara-api.PUBLIC_URL}
 ```
 
 ### Option 3: AWS ECS with ALB
@@ -242,14 +242,14 @@ services:
 2. **Build and push images**:
    ```bash
    # Build and push backend
-   docker build -t ara-api .
-   docker tag ara-api:latest your-account.dkr.ecr.region.amazonaws.com/ara-api:latest
-   docker push your-account.dkr.ecr.region.amazonaws.com/ara-api:latest
+   docker build -t Aara-api .
+   docker tag Aara-api:latest your-account.dkr.ecr.region.amazonaws.com/Aara-api:latest
+   docker push your-account.dkr.ecr.region.amazonaws.com/Aara-api:latest
 
    # Build and push frontend
-   docker build -t ara-frontend ./frontend
-   docker tag ara-frontend:latest your-account.dkr.ecr.region.amazonaws.com/ara-frontend:latest
-   docker push your-account.dkr.ecr.region.amazonaws.com/ara-frontend:latest
+   docker build -t Aara-frontend ./frontend
+   docker tag Aara-frontend:latest your-account.dkr.ecr.region.amazonaws.com/Aara-frontend:latest
+   docker push your-account.dkr.ecr.region.amazonaws.com/Aara-frontend:latest
    ```
 
 3. **Create ECS services** with Application Load Balancer
@@ -271,7 +271,7 @@ CORS_ORIGINS=https://your-frontend-domain.com
 **Frontend (.env.production):**
 ```env
 NEXT_PUBLIC_API_URL=https://your-backend-domain.com
-NEXT_PUBLIC_APP_NAME=Ara Health Agent
+NEXT_PUBLIC_APP_NAME=Aara Health Agent
 NEXT_PUBLIC_ENVIRONMENT=production
 ```
 
@@ -367,14 +367,14 @@ cd frontend && npm start
 |--------|----------|-------------|
 | GET | `/` | API information |
 | GET | `/health` | Health check |
-| POST | `/chat` | Send message to Ara |
+| POST | `/chat` | Send message to Aara |
 | GET | `/conversations/{id}` | Get conversation history |
 | DELETE | `/conversations/{id}` | Delete conversation |
 
 ## 📱 Frontend Features
 
 - **Responsive Design** - Works on desktop and mobile
-- **Real-time Chat** - Instant messaging with Ara
+- **Real-time Chat** - Instant messaging with Aara
 - **Message History** - Conversation persistence
 - **Loading States** - Visual feedback during AI processing
 - **Error Handling** - Graceful error management
@@ -399,10 +399,10 @@ curl http://localhost:8000/health
 cd frontend && npm run build
 
 # View API logs
-docker logs ara-api
+docker logs Aara-api
 
 # View frontend logs
-docker logs ara-frontend
+docker logs Aara-frontend
 ```
 
 ## 📈 Performance Optimization
@@ -433,4 +433,4 @@ docker logs ara-frontend
 
 ---
 
-🌸 **Happy Deploying!** Your Ara Health Agent is now ready to help users with their health and wellness questions through a beautiful, modern web interface. 
+🌸 **Happy Deploying!** Your Aara Health Agent is now ready to help users with their health and wellness questions through a beautiful, modern web interface. 

@@ -1,7 +1,7 @@
  #!/usr/bin/env python3
 """
 Simple test script to demonstrate the new greeting and info functionality.
-Run this to see how Ara responds to greetings and questions about herself and HerMirror.
+Run this to see how Aara responds to greetings and questions about herself and HerMirror.
 """
 
 import os
@@ -21,7 +21,7 @@ try:
         result = rule_engine_node(state)
         
         if 'final_response' in result and result['final_response']:
-            print(f"🌸 Ara: {result['final_response']}")
+            print(f"🌸 Aara: {result['final_response']}")
         else:
             print("🔄 No direct response - would be passed to tools/reasoning")
         
@@ -32,7 +32,7 @@ try:
             print(f"📋 Rule triggered: {rule_type}")
     
     print("=" * 60)
-    print("🌸 Testing Ara's New Greeting & Info Responses 🌸")
+    print("🌸 Testing Aara's New Greeting & Info Responses 🌸")
     print("=" * 60)
     
     # Test greetings
@@ -45,7 +45,7 @@ try:
     # Test agent info
     print("\n🎯 TESTING AGENT INFO:")
     test_response("who are you")
-    test_response("what is ara")
+    test_response("what is Aara")
     test_response("what can you do")
     
     # Test platform info
@@ -63,7 +63,7 @@ try:
     test_response("tell me about PCOS")
     
     print("\n" + "=" * 60)
-    print("✅ Test completed! Ara is ready to greet users and share info!")
+    print("✅ Test completed! Aara is ready to greet users and share info!")
     print("=" * 60)
 
 except ImportError as e:

@@ -2,7 +2,7 @@
 
 ## 🔧 Overview
 
-The Ara Health Agent is highly configurable to meet different deployment needs, from development to production environments. This guide covers all configuration options and best practices.
+The Aara Health Agent is highly configurable to meet different deployment needs, from development to production environments. This guide covers all configuration options and best practices.
 
 ## 📁 Configuration Files
 
@@ -28,12 +28,12 @@ OPENAI_TIMEOUT=30                     # Request timeout in seconds
 # Tavily Search Configuration
 TAVILY_API_KEY=your_tavily_api_key_here
 TAVILY_MAX_RESULTS=5                  # Number of search results
-TAVILY_INCLUDE_DOMAINS=               # Comma-separated domains to include
-TAVILY_EXCLUDE_DOMAINS=               # Comma-separated domains to exclude
+TAVILY_INCLUDE_DOMAINS=               # Comma-sepAarated domains to include
+TAVILY_EXCLUDE_DOMAINS=               # Comma-sepAarated domains to exclude
 TAVILY_TIMEOUT=10                     # Search timeout in seconds
 
 # Agent Configuration
-AGENT_NAME=Ara                        # Agent display name
+AGENT_NAME=Aara                        # Agent display name
 AGENT_DESCRIPTION=Your AI companion for women's health and skincare
 AGENT_PERSONALITY=empathetic          # empathetic, professional, casual
 AGENT_RESPONSE_STYLE=supportive       # supportive, clinical, educational
@@ -44,7 +44,7 @@ AGENT_MAX_HISTORY=10                  # Conversation history limit
 ```env
 # Vector Database
 VECTOR_DB_PATH=data/vectorstore       # Database storage path
-VECTOR_DB_COLLECTION=ara_knowledge    # Collection name
+VECTOR_DB_COLLECTION=Aara_knowledge    # Collection name
 VECTOR_DB_EMBEDDING_MODEL=text-embedding-ada-002
 VECTOR_DB_CHUNK_SIZE=1000             # Text chunk size for embeddings
 VECTOR_DB_CHUNK_OVERLAP=200           # Overlap between chunks
@@ -88,7 +88,7 @@ GARBAGE_COLLECTION_INTERVAL=300       # GC interval (seconds)
 ```env
 # Logging Settings
 LOG_LEVEL=INFO                        # DEBUG, INFO, WARNING, ERROR, CRITICAL
-LOG_FILE=logs/ara.log                 # Log file path
+LOG_FILE=logs/Aara.log                 # Log file path
 LOG_MAX_SIZE=10485760                 # Max log file size (10MB)
 LOG_BACKUP_COUNT=5                    # Number of backup files
 LOG_FORMAT=detailed                   # simple, detailed, json
@@ -101,7 +101,7 @@ LOG_CONSOLE_OUTPUT=true               # Enable console logging
 ```yaml
 # Agent Configuration
 agent:
-  name: "Ara"
+  name: "Aara"
   description: "Your AI companion for women's health and skincare"
   personality: "empathetic"           # empathetic, professional, casual
   response_style: "supportive"        # supportive, clinical, educational
@@ -202,7 +202,7 @@ tools:
 database:
   vector_store:
     provider: "chromadb"              # chromadb, pinecone, weaviate
-    collection_name: "ara_knowledge"  # Collection name
+    collection_name: "Aara_knowledge"  # Collection name
     embedding_model: "text-embedding-ada-002"
     chunk_size: 1000                  # Text chunk size
     chunk_overlap: 200                # Overlap between chunks
@@ -283,7 +283,7 @@ handlers:
     class: logging.handlers.RotatingFileHandler
     level: DEBUG
     formatter: detailed
-    filename: logs/ara.log
+    filename: logs/Aara.log
     maxBytes: 10485760  # 10MB
     backupCount: 5
     encoding: utf-8
@@ -292,7 +292,7 @@ handlers:
     class: logging.handlers.RotatingFileHandler
     level: ERROR
     formatter: detailed
-    filename: logs/ara_errors.log
+    filename: logs/Aara_errors.log
     maxBytes: 10485760  # 10MB
     backupCount: 3
     encoding: utf-8
@@ -301,29 +301,29 @@ handlers:
     class: logging.handlers.RotatingFileHandler
     level: WARNING
     formatter: json
-    filename: logs/ara_safety.log
+    filename: logs/Aara_safety.log
     maxBytes: 10485760  # 10MB
     backupCount: 10
     encoding: utf-8
     filters: [safety_filter]
 
 loggers:
-  ara.agent:
+  Aara.agent:
     level: DEBUG
     handlers: [console, file]
     propagate: false
   
-  ara.rules:
+  Aara.rules:
     level: DEBUG
     handlers: [console, file]
     propagate: false
   
-  ara.tools:
+  Aara.tools:
     level: DEBUG
     handlers: [console, file]
     propagate: false
   
-  ara.safety:
+  Aara.safety:
     level: WARNING
     handlers: [console, file, safety_file]
     propagate: false
@@ -426,7 +426,7 @@ personality:
     formality: "semi-formal"    # formal, semi-formal, casual
     emoji_usage: "moderate"     # none, light, moderate, heavy
     
-  # Response characteristics
+  # Response chAaracteristics
   responses:
     length_preference: "detailed"  # brief, moderate, detailed
     explanation_level: "thorough"  # basic, moderate, thorough
@@ -559,7 +559,7 @@ services:
 # Test-specific database
 database:
   vector_store:
-    collection_name: "test_ara_knowledge"
+    collection_name: "test_Aara_knowledge"
     path: "test_data/vectorstore"
 
 # Relaxed safety for testing
@@ -612,7 +612,7 @@ monitoring:
 version: '3.8'
 
 services:
-  ara-agent:
+  Aara-agent:
     build: .
     ports:
       - "8000:8000"
@@ -638,4 +638,4 @@ volumes:
   redis_data:
 ```
 
-This comprehensive configuration system allows you to customize every aspect of the Ara Health Agent while maintaining security, performance, and reliability across different deployment environments. 
+This comprehensive configuration system allows you to customize every aspect of the Aara Health Agent while maintaining security, performance, and reliability across different deployment environments. 

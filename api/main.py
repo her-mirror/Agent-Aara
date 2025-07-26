@@ -37,7 +37,7 @@
 # logger = logging.getLogger(__name__)
 
 # app = FastAPI(
-#     title="Ara Health Agent API",
+#     title="Aara Health Agent API",
 #     description="AI-powered women's health and skincare assistant",
 #     version="1.0.0"
 # )
@@ -243,7 +243,7 @@
 # async def root():
 #     """Root endpoint with API information"""
 #     return {
-#         "message": "Ara Health Agent API",
+#         "message": "Aara Health Agent API",
 #         "version": "1.0.0",
 #         "docs": "/docs",
 #         "health": "/health",
@@ -434,15 +434,15 @@
 #                 # Normalize role names
 #                 if role.lower() in ["user", "human"]:
 #                     role = "user"
-#                 elif role.lower() in ["assistant", "aara", "ara", "bot", "ai"]:
+#                 elif role.lower() in ["assistant", "aAara", "Aara", "bot", "ai"]:
 #                     role = "assistant"
                 
 #                 if role == "user":
-#                     chat_history.append({"user": content, "ara": ""})
+#                     chat_history.append({"user": content, "Aara": ""})
 #                 elif role == "assistant" and chat_history:
-#                     chat_history[-1]["ara"] = content
+#                     chat_history[-1]["Aara"] = content
 #                 elif role == "assistant" and not chat_history:
-#                     chat_history.append({"user": "", "ara": content})
+#                     chat_history.append({"user": "", "Aara": content})
         
 #         tracker.capture_metrics("workflow_start")
 #         logger.info(f"Processing chat for conversation: {conversation_id}")
@@ -456,7 +456,7 @@
 #             conversations[conversation_id] = []
 #         conversations[conversation_id].append({
 #             "user": request.message,
-#             "ara": response
+#             "Aara": response
 #         })
         
 #         # Store metrics
@@ -659,7 +659,7 @@ except ImportError as e:
     sys.exit(1)
 
 app = FastAPI(
-    title="Ara Health Agent API",
+    title="Aara Health Agent API",
     description="AI-powered women's health and skincare assistant",
     version="1.0.0"
 )
@@ -717,7 +717,7 @@ conversations: Dict[str, List[Dict[str, str]]] = {}
 async def root():
     """Root endpoint with API information"""
     return {
-        "message": "Ara Health Agent API",
+        "message": "Aara Health Agent API",
         "version": "1.0.0",
         "docs": "/docs",
         "health": "/health"
@@ -832,20 +832,20 @@ async def chat(request: ChatRequest):
                 # Normalize role names
                 if role.lower() in ["user", "human"]:
                     role = "user"
-                elif role.lower() in ["assistant", "aara", "ara", "bot", "ai"]:
+                elif role.lower() in ["assistant", "aAara", "Aara", "bot", "ai"]:
                     role = "assistant"
                 
                 print(f"  - {role}: {content[:50]}...")
                 
                 if role == "user":
-                    chat_history.append({"user": content, "ara": ""})
+                    chat_history.append({"user": content, "Aara": ""})
                     print(f"✅ Added user message to chat_history")
                 elif role == "assistant" and chat_history:
-                    chat_history[-1]["ara"] = content
+                    chat_history[-1]["Aara"] = content
                     print(f"✅ Added assistant response to last exchange")
                 elif role == "assistant" and not chat_history:
                     # First message is assistant - create empty user entry
-                    chat_history.append({"user": "", "ara": content})
+                    chat_history.append({"user": "", "Aara": content})
                     print(f"✅ Added assistant-first message to chat_history")
                 else:
                     print(f"❌ Skipped message - role: '{role}', has_previous_exchange: {len(chat_history) > 0}")
@@ -853,7 +853,7 @@ async def chat(request: ChatRequest):
         print(f"\n📤 CONVERTED CHAT HISTORY FOR WORKFLOW: {len(chat_history)} exchanges")
         for i, exchange in enumerate(chat_history[-2:]):  # Show last 2 exchanges
             print(f"  {i+1}. User: {exchange.get('user', '')[:40]}...")
-            print(f"     Ara: {exchange.get('ara', '')[:40]}...")
+            print(f"     Aara: {exchange.get('Aara', '')[:40]}...")
         
         # Run the workflow
         response = run_workflow(request.message, chat_history)
@@ -864,7 +864,7 @@ async def chat(request: ChatRequest):
                 conversations[request.conversation_id] = []
             conversations[request.conversation_id].append({
                 "user": request.message,
-                "ara": response
+                "Aara": response
             })
         
         return ChatResponse(

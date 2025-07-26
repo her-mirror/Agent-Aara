@@ -26,7 +26,7 @@ def load_rules() -> tuple:
     
     except UnicodeDecodeError as e:
         print(f"❌ Unicode encoding error: {e}")
-        print("💡 Solution: Files contain special characters that need UTF-8 encoding")
+        print("💡 Solution: Files contain special chAaracters that need UTF-8 encoding")
         raise
     except FileNotFoundError as e:
         print(f"❌ Rule file not found: {e}")
@@ -45,7 +45,7 @@ def is_greeting(user_input: str) -> bool:
     
     user_input_lower = user_input.lower().strip()
     
-    # Remove common punctuation and extra characters
+    # Remove common punctuation and extra chAaracters
     cleaned_input = ''.join(c for c in user_input_lower if c.isalpha() or c.isspace())
     
     # Check for exact matches or greetings at the start

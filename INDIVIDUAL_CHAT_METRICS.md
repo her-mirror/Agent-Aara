@@ -2,9 +2,9 @@
 
 ## Overview
 
-The Aara Health Agent now includes **comprehensive individual chat metrics tracking** that monitors CPU and RAM usage for every single question and response, providing:
+The AAara Health Agent now includes **comprehensive individual chat metrics tracking** that monitors CPU and RAM usage for every single question and response, providing:
 
-- **Separate metrics for each chat question**
+- **SepAarate metrics for each chat question**
 - **Peak and low resource values** during each conversation
 - **Live real-time monitoring** with streaming metrics
 - **Detailed performance analysis** per conversation
@@ -37,7 +37,7 @@ Each chat is monitored through these stages:
 3. **workflow_start** - AI workflow begins
 4. **workflow_completed** - AI response generated
 5. **storing_conversation** - Saving conversation
-6. **response_preparation** - Final response prep
+6. **response_prepAaration** - Final response prep
 
 ### 4. **Live Metrics Streaming**
 Real-time metrics with Server-Sent Events:
@@ -121,7 +121,7 @@ Get detailed metrics for all chats in a specific conversation:
   },
   "individual_chats": [
     {
-      "message": "Hello Ara! How are you?",
+      "message": "Hello Aara! How are you?",
       "total_duration_ms": 450,
       "peak_metrics": { "cpu": 25.4, "memory": 148.2 },
       "low_metrics": { "cpu": 12.1, "memory": 145.2 },
@@ -171,7 +171,7 @@ This test script will:
 ```html
 <!DOCTYPE html>
 <html>
-<head><title>Live Ara Metrics</title></head>
+<head><title>Live Aara Metrics</title></head>
 <body>
 <div id="metrics"></div>
 <script>
@@ -219,7 +219,7 @@ curl http://localhost:8000/conversation-metrics/my_skincare_chat
 🎯 INDIVIDUAL CHAT COMPLETED - chat_1234567890
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 📝 Question: "I have oily skin and acne. What skincare routine..."
-📝 Response Length: 245 characters
+📝 Response Length: 245 chAaracters
 ⏱️  Total Duration: 1250ms
 📊 Performance Rating: Good
 🔥 CPU Range: 25.4% - 47.8%

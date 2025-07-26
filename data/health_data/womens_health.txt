@@ -36,7 +36,7 @@ PERIOD TRACKING BENEFITS:
 === POLYCYSTIC OVARY SYNDROME (PCOS) ===
 
 PCOS DEFINITION:
-PCOS is a hormonal disorder affecting 6-12% of women of reproductive age. It's characterized by multiple small cysts on ovaries, irregular periods, and elevated androgen levels.
+PCOS is a hormonal disorder affecting 6-12% of women of reproductive age. It's chAaracterized by multiple small cysts on ovaries, irregular periods, and elevated androgen levels.
 
 PCOS SYMPTOMS:
 - Irregular or absent periods
@@ -268,7 +268,7 @@ SEXUALLY TRANSMITTED INFECTIONS (STIs):
 - Partner notification importance
 
 VAGINAL HEALTH:
-- Normal vaginal discharge characteristics
+- Normal vaginal discharge chAaracteristics
 - pH balance importance
 - Yeast infections: causes, symptoms, treatment
 - Bacterial vaginosis: causes, symptoms, treatment

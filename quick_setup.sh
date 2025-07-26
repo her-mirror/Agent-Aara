@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Ara Health Agent - Quick Setup Script
-echo "🌸 Ara Health Agent - Quick Setup"
+# Aara Health Agent - Quick Setup Script
+echo "🌸 Aara Health Agent - Quick Setup"
 echo "=================================="
 
 # Colors for output
@@ -40,12 +40,12 @@ OPENAI_MODEL=gpt-4o
 TAVILY_API_KEY=your_tavily_api_key_here
 
 # Agent Configuration
-AGENT_NAME=Ara
+AGENT_NAME=Aara
 AGENT_DESCRIPTION=Your AI companion for women's health and skincare
 
 # Logging Configuration
 LOG_LEVEL=INFO
-LOG_FILE=logs/ara.log
+LOG_FILE=logs/Aara.log
 EOF
     echo -e "${YELLOW}⚠️  Please update the .env file with your actual API keys!${NC}"
 fi
@@ -63,4 +63,4 @@ echo "3. Start the frontend: cd frontend && npm run dev"
 echo "4. Open http://localhost:3000"
 echo ""
 echo "📖 For detailed instructions, see DEPLOYMENT_GUIDE.md"
-echo "🌸 Happy coding with Ara!" 
+echo "🌸 Happy coding with Aara!" 

@@ -2,7 +2,7 @@
 
 ## 🔌 Overview
 
-The Ara Health Agent provides a comprehensive API for integrating with and extending the workflow system. This documentation covers all available endpoints, classes, and methods for developers.
+The Aara Health Agent provides a comprehensive API for integrating with and extending the workflow system. This documentation covers all available endpoints, classes, and methods for developers.
 
 ## 🏗️ Core Workflow API
 
@@ -355,7 +355,7 @@ class WorkflowTool(ABC):
         Execute tool logic
         
         Args:
-            input_data: Tool input parameters
+            input_data: Tool input pAarameters
             
         Returns:
             Tool execution results
@@ -697,7 +697,7 @@ class WorkflowAnalytics:
 ```python
 # Initialize workflow manager
 config = {
-    "agent": {"name": "Ara", "personality": "empathetic"},
+    "agent": {"name": "Aara", "personality": "empathetic"},
     "safety": {"emergency_detection": True},
     "tools": {"health_advice": {"enabled": True}}
 }
@@ -747,7 +747,7 @@ metrics = WorkflowMetrics()
 analytics = WorkflowAnalytics()
 
 # Process with monitoring
-response = workflow_manager.process_message("Hello Ara")
+response = workflow_manager.process_message("Hello Aara")
 
 # Record metrics
 metrics.record_execution(response)
@@ -758,4 +758,4 @@ summary = metrics.get_metrics_summary()
 report = analytics.generate_report("24h")
 ```
 
-This API provides comprehensive access to all workflow functionality, enabling developers to integrate, extend, and monitor the Ara Health Agent effectively. 
+This API provides comprehensive access to all workflow functionality, enabling developers to integrate, extend, and monitor the Aara Health Agent effectively. 

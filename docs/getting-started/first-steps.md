@@ -1,16 +1,16 @@
-# First Steps with Ara
+# First Steps with Aara
 
 ## 🌸 Welcome to Your AI Health Companion
 
-Congratulations on setting up Ara! This guide will help you take your first steps and learn how to interact effectively with your new AI health companion.
+Congratulations on setting up Aara! This guide will help you take your first steps and learn how to interact effectively with your new AI health companion.
 
 ## 🎯 Getting Started
 
 ### Your First Conversation
 
-When you start Ara, you'll see:
+When you start Aara, you'll see:
 ```
-🌸 Ara Health Agent Started
+🌸 Aara Health Agent Started
 Type 'quit' to exit, 'help' for commands
 
 You: 
@@ -18,13 +18,13 @@ You:
 
 Try starting with a simple greeting:
 
-**You**: "Hello Ara!"
+**You**: "Hello Aara!"
 
-**Ara**: "Hello! 🌸 I'm Ara, your AI companion for women's health and skincare. I'm so glad you're here! I'm designed to provide personalized, empathetic support for your wellness journey..."
+**Aara**: "Hello! 🌸 I'm Aara, your AI companion for women's health and skincare. I'm so glad you're here! I'm designed to provide personalized, empathetic support for your wellness journey..."
 
-## 💡 Understanding Ara's Capabilities
+## 💡 Understanding Aara's Capabilities
 
-### What Ara Can Help With
+### What Aara Can Help With
 
 #### 🏥 Women's Health
 - **Menstrual Health**: Cycle tracking, irregularities, PMS/PMDD
@@ -49,7 +49,7 @@ Try starting with a simple greeting:
 - **Crisis Intervention**: Mental health crisis support
 - **Professional Referrals**: When to seek medical care
 
-## 🗣️ How to Communicate with Ara
+## 🗣️ How to Communicate with Aara
 
 ### Effective Communication Tips
 
@@ -90,10 +90,10 @@ Try starting with a simple greeting:
 
 ## 🎨 Conversation Styles
 
-### Ara's Communication Style
+### Aara's Communication Style
 
 #### Empathetic & Supportive
-Ara responds with warmth and understanding:
+Aara responds with warmth and understanding:
 - "I understand how frustrating irregular periods can be..."
 - "It's completely normal to feel overwhelmed about skincare..."
 - "Your concerns are valid, and I'm here to help..."
@@ -105,7 +105,7 @@ All advice is grounded in medical research:
 - "Current medical guidelines recommend..."
 
 #### Safety-Focused
-Ara prioritizes your wellbeing:
+Aara prioritizes your wellbeing:
 - "This sounds like something you should discuss with a healthcare provider..."
 - "If you're experiencing severe symptoms, please seek immediate medical attention..."
 - "I'm concerned about you - here are some resources that can help..."
@@ -114,21 +114,21 @@ Ara prioritizes your wellbeing:
 
 #### If Responses Are Too Technical
 **You**: "Can you explain that in simpler terms?"
-**Ara**: "Of course! Let me break that down in a more straightforward way..."
+**Aara**: "Of course! Let me break that down in a more straightforward way..."
 
 #### If You Want More Detail
 **You**: "Can you tell me more about that?"
-**Ara**: "Absolutely! Here's a more detailed explanation..."
+**Aara**: "Absolutely! Here's a more detailed explanation..."
 
 #### If You're Feeling Overwhelmed
 **You**: "This is a lot of information. Can you summarize the key points?"
-**Ara**: "I understand - let me give you the most important takeaways..."
+**Aara**: "I understand - let me give you the most important takeaways..."
 
 ## 🔄 Building Ongoing Conversations
 
 ### Conversation Memory
 
-Ara remembers your conversation history within each session:
+Aara remembers your conversation history within each session:
 - Previous questions and concerns
 - Your skin type and health profile
 - Preferences and sensitivities
@@ -173,14 +173,14 @@ Ara remembers your conversation history within each session:
 ### Advanced Features
 
 #### Personalization
-The more you interact with Ara, the better she understands:
+The more you interact with Aara, the better she understands:
 - Your communication preferences
 - Your health priorities
 - Your lifestyle constraints
 - Your comfort level with different topics
 
 #### Context Building
-Help Ara help you better by providing:
+Help Aara help you better by providing:
 - Your age range (if comfortable)
 - Relevant medical history
 - Current medications or treatments
@@ -190,7 +190,7 @@ Help Ara help you better by providing:
 
 ### When to Seek Professional Help
 
-Ara will always recommend professional medical care when appropriate, but you should seek immediate help for:
+Aara will always recommend professional medical care when appropriate, but you should seek immediate help for:
 
 #### Medical Emergencies
 - Severe pain or bleeding
@@ -207,12 +207,12 @@ Ara will always recommend professional medical care when appropriate, but you sh
 
 ### Privacy & Safety
 
-#### What Ara Remembers
+#### What Aara Remembers
 - Conversation history within each session
 - Preferences and context you share
 - General health topics discussed
 
-#### What Ara Doesn't Store
+#### What Aara Doesn't Store
 - Personal identifying information
 - Specific medical details beyond the session
 - Sensitive personal information
@@ -222,19 +222,19 @@ Ara will always recommend professional medical care when appropriate, but you sh
 ### Common Positive Outcomes
 
 #### Health Understanding
-- "Ara helped me understand my PCOS symptoms and when to see a doctor"
+- "Aara helped me understand my PCOS symptoms and when to see a doctor"
 - "I learned so much about menstrual health and feel more confident"
 - "The fertility advice helped me prepare for conception"
 
 #### Skincare Improvements
-- "My skin routine is finally working thanks to Ara's guidance"
+- "My skin routine is finally working thanks to Aara's guidance"
 - "I understand my skin type and what products to avoid"
-- "Ara helped me build confidence in my skincare choices"
+- "Aara helped me build confidence in my skincare choices"
 
 #### Emotional Support
-- "Ara provided comfort during a difficult health scare"
+- "Aara provided comfort during a difficult health scare"
 - "I felt heard and understood when discussing my concerns"
-- "The crisis resources Ara provided were exactly what I needed"
+- "The crisis resources Aara provided were exactly what I needed"
 
 ## 🔄 Continuous Learning
 
@@ -292,12 +292,12 @@ Ara will always recommend professional medical care when appropriate, but you sh
 - Safe, supportive environment
 
 #### What Not to Expect
-- Ara is not a replacement for medical care
+- Aara is not a replacement for medical care
 - Diagnoses or specific medical advice
 - Prescription recommendations
 - Emergency medical response
 
-### Making the Most of Ara
+### Making the Most of Aara
 
 #### Short-term Goals
 - Learn about your health concerns
@@ -311,4 +311,4 @@ Ara will always recommend professional medical care when appropriate, but you sh
 - Stronger relationship with healthcare
 - Enhanced overall wellness
 
-Welcome to your journey with Ara! Remember, I'm here to support you every step of the way. Don't hesitate to ask questions, seek clarification, or share your concerns. Your health and wellbeing are my priority. 🌸 
+Welcome to your journey with Aara! Remember, I'm here to support you every step of the way. Don't hesitate to ask questions, seek clarification, or share your concerns. Your health and wellbeing are my priority. 🌸 

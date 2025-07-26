@@ -17,7 +17,7 @@ def create_file(path, content):
 
 def main():
     """Main setup function"""
-    print("Setting up Next.js frontend for Ara Health Agent...")
+    print("Setting up Next.js frontend for Aara Health Agent...")
     
     # Create directories
     directories = [

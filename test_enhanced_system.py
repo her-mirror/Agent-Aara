@@ -119,7 +119,7 @@ try:
         static_state = {'user_input': 'who are you', 'intermediate_steps': []}
         result = rule_engine_node(static_state)
         
-        if result.get('final_response') and 'Ara' in result.get('final_response', ''):
+        if result.get('final_response') and 'Aara' in result.get('final_response', ''):
             print("  ✅ Static rule responses still work")
         else:
             print("  ❌ Static rule responses broken")
@@ -181,7 +181,7 @@ try:
         print("You can now test specific inputs manually:")
         print("- Try greetings: 'hello', 'hey', 'good morning', 'namaste'")
         print("- Try crisis inputs: 'I want to die', 'suicide', 'hurt myself'")
-        print("- Try regular inputs: 'who are you', 'what is ara', 'help'")
+        print("- Try regular inputs: 'who are you', 'what is Aara', 'help'")
         print("- Type 'quit' to exit")
         
         while True:

@@ -2,7 +2,7 @@
 
 set -e  # Exit on any error
 
-echo "🔧 Render Build Script for Ara Health Agent"
+echo "🔧 Render Build Script for Aara Health Agent"
 echo "==========================================="
 
 # Update system packages

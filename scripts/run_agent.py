@@ -16,9 +16,9 @@ except ImportError as e:
 
 def main():
     print("=" * 50)
-    print("🌸 Aara: Women's Health & Skincare AI Agent 🌸")
+    print("🌸 AAara: Women's Health & Skincare AI Agent 🌸")
     print("=" * 50)
-    print("Hi! I'm Aara, your supportive AI assistant for women's health and skincare.")
+    print("Hi! I'm AAara, your supportive AI assistant for women's health and skincare.")
     print("I can help with topics like:")
     print("• Skincare routines for different skin types")
     print("• Menstrual health and cycle tracking")
@@ -34,26 +34,26 @@ def main():
             user_input = input("\n💬 You: ").strip()
             
             if user_input.lower() in ['exit', 'quit', 'bye', 'goodbye']:
-                print("\n🌸 Ara: Take care! Remember to prioritize your health and wellbeing. Goodbye! 🌸")
+                print("\n🌸 Aara: Take care! Remember to prioritize your health and wellbeing. Goodbye! 🌸")
                 break
             
             if not user_input:
-                print("🌸 Ara: I'm here to help! Please ask me anything about women's health or skincare.")
+                print("🌸 Aara: I'm here to help! Please ask me anything about women's health or skincare.")
                 continue
             
-            print("\n🤔 Ara is thinking...")
+            print("\n🤔 Aara is thinking...")
             response = run_workflow(user_input, chat_history)
-            print(f"\n🌸 Ara: {response}")
+            print(f"\n🌸 Aara: {response}")
             
             # Update chat history
-            chat_history.append({'user': user_input, 'ara': response})
+            chat_history.append({'user': user_input, 'Aara': response})
             
             # Keep only last 5 exchanges to manage memory
             if len(chat_history) > 5:
                 chat_history = chat_history[-5:]
                 
         except KeyboardInterrupt:
-            print("\n\n🌸 Ara: Goodbye! Take care of yourself! 🌸")
+            print("\n\n🌸 Aara: Goodbye! Take care of yourself! 🌸")
             break
         except Exception as e:
             print(f"\n❌ Sorry, I encountered an error: {e}")

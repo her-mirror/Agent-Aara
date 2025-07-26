@@ -23,29 +23,29 @@ def test_product_suggestions():
             "name": "Oily Skin Routine",
             "user_input": "I have oily skin and keep getting acne. What routine should I follow?",
             "chat_history": [
-                {"user": "Hi! I need help with skincare", "ara": "Hello! I'd love to help with your skincare needs."},
-                {"user": "I have oily skin and keep getting acne", "ara": "I understand how frustrating that can be."}
+                {"user": "Hi! I need help with skincare", "Aara": "Hello! I'd love to help with your skincare needs."},
+                {"user": "I have oily skin and keep getting acne", "Aara": "I understand how frustrating that can be."}
             ]
         },
         {
             "name": "PCOS Management",
             "user_input": "I was diagnosed with PCOS and having irregular periods. Any supplements that might help?",
             "chat_history": [
-                {"user": "I'm dealing with hormonal issues", "ara": "I'm here to support you through this."}
+                {"user": "I'm dealing with hormonal issues", "Aara": "I'm here to support you through this."}
             ]
         },
         {
             "name": "Dry Skin Issues",
             "user_input": "My skin feels so dry and tight, especially in winter. Need a gentle cleanser recommendation.",
             "chat_history": [
-                {"user": "My skin is always dry", "ara": "Dry skin can be challenging to manage."}
+                {"user": "My skin is always dry", "Aara": "Dry skin can be challenging to manage."}
             ]
         },
         {
             "name": "Menstrual Cramps",
             "user_input": "I get terrible period cramps every month. What can help with the pain?",
             "chat_history": [
-                {"user": "Period pain is awful", "ara": "I understand how difficult period pain can be."}
+                {"user": "Period pain is awful", "Aara": "I understand how difficult period pain can be."}
             ]
         },
         {
@@ -139,7 +139,7 @@ def test_product_loading():
             print(f"  - {product.name} ({product.price_range})")
 
 if __name__ == "__main__":
-    print("🌸 Ara Health Agent - Product Suggestion Testing")
+    print("🌸 Aara Health Agent - Product Suggestion Testing")
     print("=" * 60)
     
     try:

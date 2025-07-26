@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Script to run the Ara Health Agent API server
+Script to run the Aara Health Agent API server
 """
 import os
 import sys
@@ -12,7 +12,7 @@ sys.path.insert(0, project_root)
 
 def main():
     """Start the FastAPI server"""
-    print("🌸 Starting Ara Health Agent API Server...")
+    print("🌸 Starting Aara Health Agent API Server...")
     print("📡 API Documentation: http://localhost:8000/docs")
     print("🏥 Health Check: http://localhost:8000/health")
     print("💬 Chat Endpoint: http://localhost:8000/chat")
@@ -30,7 +30,7 @@ def main():
             log_level="info"
         )
     except KeyboardInterrupt:
-        print("\n🌸 Ara API Server stopped. Goodbye!")
+        print("\n🌸 Aara API Server stopped. Goodbye!")
     except Exception as e:
         print(f"\n❌ Error starting API server: {e}")
         sys.exit(1)

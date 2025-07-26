@@ -1,12 +1,12 @@
-# Ara Health Agent Documentation
+# Aara Health Agent Documentation
 
-## 🌸 Welcome to Ara
+## 🌸 Welcome to Aara
 
-**Ara** is an empathetic AI companion designed specifically for women's health and skincare. Built with cutting-edge technology including LangGraph workflows, advanced rule systems, and specialized tools, Ara provides personalized, evidence-based guidance while maintaining the highest safety standards.
+**Aara** is an empathetic AI companion designed specifically for women's health and skincare. Built with cutting-edge technology including LangGraph workflows, advanced rule systems, and specialized tools, Aara provides personalized, evidence-based guidance while maintaining the highest safety standards.
 
-## 🎯 What is Ara?
+## 🎯 What is Aara?
 
-Ara is more than just a chatbot – she's your trusted health companion who:
+Aara is more than just a chatbot – she's your trusted health companion who:
 
 - **Understands women's health** with specialized knowledge in menstrual health, PCOS, fertility, hormonal balance, and mental wellness
 - **Provides skincare expertise** with personalized routines, ingredient analysis, and product recommendations
@@ -65,13 +65,13 @@ graph TB
 ### Quick Start
 1. **[Installation](getting-started/installation.md)** - Set up your environment
 2. **[Configuration](getting-started/configuration.md)** - Configure API keys and settings
-3. **[First Steps](getting-started/first-steps.md)** - Learn how to interact with Ara
-4. **[Examples](examples/conversation-examples.md)** - See Ara in action
+3. **[First Steps](getting-started/first-steps.md)** - Learn how to interact with Aara
+4. **[Examples](examples/conversation-examples.md)** - See Aara in action
 
 ### For Developers
 1. **[Project Structure](development/project-structure.md)** - Understand the codebase
 2. **[Architecture](architecture/system-overview.md)** - Learn the system design
-3. **[API Reference](api/workflow.md)** - Integrate with Ara's APIs
+3. **[API Reference](api/workflow.md)** - Integrate with Aara's APIs
 4. **[Contributing](appendices/contributing.md)** - Join the development
 
 ## 📊 System Statistics
@@ -82,23 +82,23 @@ graph TB
 - **Multi-layer Safety**: Emergency detection and crisis intervention
 - **Real-time Search**: Current information from trusted sources
 
-## 🎨 What Makes Ara Special
+## 🎨 What Makes Aara Special
 
 ### Empathetic Communication
-Ara is designed to be more than informative – she's supportive, understanding, and acknowledges the emotional aspects of health concerns.
+Aara is designed to be more than informative – she's supportive, understanding, and acknowledges the emotional aspects of health concerns.
 
 ### Evidence-Based Guidance
 Every recommendation is grounded in current medical research and dermatological science, with clear citations and disclaimers.
 
 ### Personalized Experience
-Ara learns from your interactions to provide increasingly relevant and personalized advice while respecting your privacy.
+Aara learns from your interactions to provide increasingly relevant and personalized advice while respecting your privacy.
 
 ### Safety-Focused Design
 Multi-layered safety systems ensure appropriate responses and immediate help when needed.
 
 ## 🔄 Workflow Overview
 
-Ara's sophisticated workflow handles every interaction through multiple stages:
+Aara's sophisticated workflow handles every interaction through multiple stages:
 
 1. **Input Processing**: User message analysis and intent recognition
 2. **Rule Matching**: Fast pattern matching for common queries
@@ -182,14 +182,14 @@ Glossary, resources, and additional reference materials.
 - **Email Support**: Direct assistance for complex issues
 
 ### Contributing
-We welcome contributions! Whether you're fixing bugs, adding features, improving documentation, or sharing feedback, your input helps make Ara better for everyone.
+We welcome contributions! Whether you're fixing bugs, adding features, improving documentation, or sharing feedback, your input helps make Aara better for everyone.
 
 ### Professional Support
-Enterprise support and custom development services are available for organizations looking to integrate or extend Ara.
+Enterprise support and custom development services are available for organizations looking to integrate or extend Aara.
 
 ## 🎯 Mission
 
-Our mission is to democratize access to quality women's health information and support. Ara represents a step toward more personalized, empathetic, and accessible healthcare guidance that respects women's unique needs and experiences.
+Our mission is to democratize access to quality women's health information and support. Aara represents a step toward more personalized, empathetic, and accessible healthcare guidance that respects women's unique needs and experiences.
 
 ## 🌈 Vision
 
@@ -197,8 +197,8 @@ We envision a future where every woman has access to personalized, evidence-base
 
 ---
 
-**Ready to get started?** Begin with our [Quick Start Guide](getting-started/quick-start.md) or explore the [Architecture Overview](architecture/system-overview.md) to understand how Ara works.
+**Ready to get started?** Begin with our [Quick Start Guide](getting-started/quick-start.md) or explore the [Architecture Overview](architecture/system-overview.md) to understand how Aara works.
 
-**Have questions?** Check out our [FAQ](troubleshooting/common-issues.md) or join our [community discussions](https://github.com/your-org/aara-health-agent/discussions).
+**Have questions?** Check out our [FAQ](troubleshooting/common-issues.md) or join our [community discussions](https://github.com/your-org/aAara-health-agent/discussions).
 
 **Welcome to the future of women's health support!** 🌸 

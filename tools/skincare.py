@@ -172,7 +172,7 @@ Here's a simple way to identify your skin type:
 **🔍 What to Look For:**
 
 **🛢️ Oily Skin:**
-- Shiny appearance all over, especially T-zone
+- Shiny appeAarance all over, especially T-zone
 - Visible pores throughout face
 - Prone to blackheads and breakouts
 - Makeup tends to slide off

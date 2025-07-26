@@ -1,6 +1,6 @@
 {
-  "title": "Ara Health Agent Documentation",
-  "description": "Comprehensive documentation for the Ara Health Agent - Your AI companion for women's health and skincare",
+  "title": "Aara Health Agent Documentation",
+  "description": "Comprehensive documentation for the Aara Health Agent - Your AI companion for women's health and skincare",
   "author": "HerMirror Team",
   "language": "en",
   "gitbook": ">=3.2.0",
@@ -24,10 +24,10 @@
   ],
   "pluginsConfig": {
     "github": {
-      "url": "https://github.com/your-org/aara-health-agent"
+      "url": "https://github.com/your-org/aAara-health-agent"
     },
     "edit-link": {
-      "base": "https://github.com/your-org/aara-health-agent/edit/main/docs",
+      "base": "https://github.com/your-org/aAara-health-agent/edit/main/docs",
       "label": "Edit This Page"
     },
     "prism": {
@@ -53,20 +53,20 @@
     },
     "search-pro": {
       "cutWordLib": "nodejieba",
-      "defineWord": ["Ara", "PCOS", "LangGraph", "HerMirror"]
+      "defineWord": ["Aara", "PCOS", "LangGraph", "HerMirror"]
     }
   },
   "variables": {
     "version": "1.0.0",
-    "agent_name": "Ara",
+    "agent_name": "Aara",
     "platform_name": "HerMirror",
-    "github_repo": "https://github.com/your-org/aara-health-agent"
+    "github_repo": "https://github.com/your-org/aAara-health-agent"
   },
   "links": {
     "sidebar": {
       "🌸 HerMirror Platform": "https://hermirror.com",
-      "🐛 Report Issues": "https://github.com/your-org/aara-health-agent/issues",
-      "💬 Discussions": "https://github.com/your-org/aara-health-agent/discussions"
+      "🐛 Report Issues": "https://github.com/your-org/aAara-health-agent/issues",
+      "💬 Discussions": "https://github.com/your-org/aAara-health-agent/discussions"
     }
   }
 } 

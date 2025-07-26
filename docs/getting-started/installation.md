@@ -40,8 +40,8 @@ sudo apt install python3.9 python3.9-pip python3.9-venv
 
 #### 2. Clone Repository
 ```bash
-git clone https://github.com/your-org/aara-health-agent.git
-cd aara-health-agent
+git clone https://github.com/your-org/aAara-health-agent.git
+cd aAara-health-agent
 ```
 
 #### 3. Create Virtual Environment
@@ -74,8 +74,8 @@ pip install -r requirements.txt
 #### Steps
 ```bash
 # Clone repository
-git clone https://github.com/your-org/aara-health-agent.git
-cd aara-health-agent
+git clone https://github.com/your-org/aAara-health-agent.git
+cd aAara-health-agent
 
 # Build and run with Docker Compose
 docker-compose up --build
@@ -87,8 +87,8 @@ For contributors and developers:
 
 ```bash
 # Clone repository
-git clone https://github.com/your-org/aara-health-agent.git
-cd aara-health-agent
+git clone https://github.com/your-org/aAara-health-agent.git
+cd aAara-health-agent
 
 # Create virtual environment
 python -m venv venv
@@ -146,20 +146,20 @@ TAVILY_API_KEY=your_tavily_api_key_here
 TAVILY_MAX_RESULTS=5
 
 # Agent Configuration
-AGENT_NAME=Ara
+AGENT_NAME=Aara
 AGENT_DESCRIPTION=Your AI companion for women's health and skincare
 AGENT_PERSONALITY=empathetic
 AGENT_RESPONSE_STYLE=supportive
 
 # Logging Configuration
 LOG_LEVEL=INFO
-LOG_FILE=logs/ara.log
+LOG_FILE=logs/Aara.log
 LOG_MAX_SIZE=10485760  # 10MB
 LOG_BACKUP_COUNT=5
 
 # Database Configuration
 VECTOR_DB_PATH=data/vectorstore
-VECTOR_DB_COLLECTION=ara_knowledge
+VECTOR_DB_COLLECTION=Aara_knowledge
 
 # Safety Configuration
 ENABLE_SAFETY_CHECKS=true
@@ -239,8 +239,8 @@ client = Client(Settings(
 
 # Create collection
 collection = client.create_collection(
-    name="ara_knowledge",
-    metadata={"description": "Ara health and skincare knowledge base"}
+    name="Aara_knowledge",
+    metadata={"description": "Aara health and skincare knowledge base"}
 )
 
 print("Database setup complete!")
@@ -289,14 +289,14 @@ python scripts/run_agent.py --config custom_config.yaml
 
 ### Expected Output
 ```
-🌸 Ara Health Agent Starting...
+🌸 Aara Health Agent Starting...
 ✅ Configuration loaded
 ✅ Rules engine initialized
 ✅ Vector database connected
 ✅ Tools loaded successfully
 ✅ Safety systems active
 
-🌸 Ara Health Agent Started
+🌸 Aara Health Agent Started
 Type 'quit' to exit, 'help' for commands
 
 You: 
@@ -449,8 +449,8 @@ cp -r data/vectorstore/ data/vectorstore.backup/
 - [Troubleshooting Guide](../troubleshooting/common-issues.md)
 
 ### Community Support
-- **GitHub Issues**: [Report bugs](https://github.com/your-org/aara-health-agent/issues)
-- **Discussions**: [Community forum](https://github.com/your-org/aara-health-agent/discussions)
+- **GitHub Issues**: [Report bugs](https://github.com/your-org/aAara-health-agent/issues)
+- **Discussions**: [Community forum](https://github.com/your-org/aAara-health-agent/discussions)
 - **Email**: support@hermirror.com
 
 ### Professional Support
@@ -469,4 +469,4 @@ cp -r data/vectorstore/ data/vectorstore.backup/
 - [ ] Agent starts without errors
 - [ ] Basic conversation test successful
 
-Congratulations! You now have Ara Health Agent installed and ready to use. 🎉 
+Congratulations! You now have Aara Health Agent installed and ready to use. 🎉 

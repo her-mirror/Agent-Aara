@@ -2,7 +2,7 @@
 
 ## 💬 Real-World Interaction Scenarios
 
-This document showcases how Ara handles various types of user interactions, demonstrating the agent's capabilities across different conversation types.
+This document showcases how Aara handles various types of user interactions, demonstrating the agent's capabilities across different conversation types.
 
 ## 👋 Basic Interactions
 
@@ -10,7 +10,7 @@ This document showcases how Ara handles various types of user interactions, demo
 
 **User**: "Hello, I'm new here"
 
-**Ara**: "Hello and welcome! 🌸 I'm Ara, your AI companion for women's health and skincare. I'm so glad you're here!
+**Aara**: "Hello and welcome! 🌸 I'm Aara, your AI companion for women's health and skincare. I'm so glad you're here!
 
 I'm designed to provide personalized, empathetic support for your wellness journey. I can help you with:
 
@@ -25,9 +25,9 @@ I'm here to listen without judgment and provide guidance based on the latest med
 
 ### Returning User Greeting
 
-**User**: "Hi Ara, good morning!"
+**User**: "Hi Aara, good morning!"
 
-**Ara**: "Good morning! 🌅 It's wonderful to hear from you again! I hope you're having a lovely start to your day.
+**Aara**: "Good morning! 🌅 It's wonderful to hear from you again! I hope you're having a lovely start to your day.
 
 How are you feeling today? Is there anything specific about your health or skincare routine you'd like to discuss, or would you like to continue from where we left off in our previous conversation?"
 
@@ -39,7 +39,7 @@ How are you feeling today? Is there anything specific about your health or skinc
 
 **User**: "I've been having irregular periods for the past few months. Should I be worried?"
 
-**Ara**: "I understand that irregular periods can be concerning and frustrating. It's completely normal to feel worried about changes in your menstrual cycle. Let me share some important information to help you understand what might be happening.
+**Aara**: "I understand that irregular periods can be concerning and frustrating. It's completely normal to feel worried about changes in your menstrual cycle. Let me share some important information to help you understand what might be happening.
 
 **Common Causes of Irregular Periods:**
 - Hormonal changes (especially during teens or approaching menopause)
@@ -73,7 +73,7 @@ Would you like to share more details about your specific situation? For example,
 
 **User**: "I think I might have PCOS. I have irregular periods, weight gain, and acne. What should I know?"
 
-**Ara**: "Thank you for sharing your concerns with me. The symptoms you're describing - irregular periods, weight gain, and acne - are indeed common signs that healthcare providers look for when evaluating PCOS. I want to provide you with helpful information while encouraging you to seek professional diagnosis.
+**Aara**: "Thank you for sharing your concerns with me. The symptoms you're describing - irregular periods, weight gain, and acne - are indeed common signs that healthcare providers look for when evaluating PCOS. I want to provide you with helpful information while encouraging you to seek professional diagnosis.
 
 **Understanding PCOS:**
 PCOS (Polycystic Ovary Syndrome) affects 1 in 10 women of reproductive age. It's a hormonal disorder that can cause various symptoms, and early diagnosis and management can make a significant difference.
@@ -109,7 +109,7 @@ Would you like specific guidance on lifestyle modifications that can help with P
 
 **User**: "My partner and I have been trying to conceive for 6 months. Any advice?"
 
-**Ara**: "I understand that trying to conceive can be both exciting and sometimes stressful. Six months of trying is still within the normal range, as it can take healthy couples up to a year to conceive. Let me share some evidence-based guidance to support your journey.
+**Aara**: "I understand that trying to conceive can be both exciting and sometimes stressful. Six months of trying is still within the normal range, as it can take healthy couples up to a year to conceive. Let me share some evidence-based guidance to support your journey.
 
 **Optimizing Your Fertility:**
 
@@ -157,7 +157,7 @@ Would you like me to explain more about any of these topics, such as how to trac
 
 **User**: "I have acne-prone skin and I'm overwhelmed by all the products. Can you help me build a simple routine?"
 
-**Ara**: "I completely understand feeling overwhelmed by skincare products! Acne-prone skin actually benefits from a simple, consistent routine rather than using too many products. Let me help you build an effective, gentle routine that won't break the bank.
+**Aara**: "I completely understand feeling overwhelmed by skincare products! Acne-prone skin actually benefits from a simple, consistent routine rather than using too many products. Let me help you build an effective, gentle routine that won't break the bank.
 
 **Morning Routine (Simple & Effective):**
 
@@ -209,7 +209,7 @@ Would you like me to explain more about any specific step, or do you have questi
 
 **User**: "My skin is super sensitive and reacts to everything. What can I use?"
 
-**Ara**: "I really empathize with having sensitive skin - it can be so frustrating when products that work for others cause irritation for you. The good news is that with the right approach, you can build a gentle routine that soothes and protects your skin.
+**Aara**: "I really empathize with having sensitive skin - it can be so frustrating when products that work for others cause irritation for you. The good news is that with the right approach, you can build a gentle routine that soothes and protects your skin.
 
 **Understanding Sensitive Skin:**
 - Often has a compromised skin barrier
@@ -278,7 +278,7 @@ Would you like specific product recommendations for your budget, or do you have 
 
 **User**: "I'm feeling really depressed and having thoughts of hurting myself"
 
-**Ara**: "I'm very concerned about you, and I want you to know that I'm here to help. What you're feeling right now is important, and your life has value. You don't have to go through this alone.
+**Aara**: "I'm very concerned about you, and I want you to know that I'm here to help. What you're feeling right now is important, and your life has value. You don't have to go through this alone.
 
 **Immediate Support Resources:**
 
@@ -318,7 +318,7 @@ Is there someone you can call right now to be with you? Or would you like me to 
 
 **User**: "I'm having severe chest pain and can't breathe properly"
 
-**Ara**: "🚨 **EMERGENCY: Please call 911 immediately or go to the nearest emergency room right now.**
+**Aara**: "🚨 **EMERGENCY: Please call 911 immediately or go to the nearest emergency room right now.**
 
 **Chest pain and difficulty breathing can be signs of a heart attack or other serious medical emergency that requires immediate medical attention.**
 
@@ -344,7 +344,7 @@ Your safety is the absolute priority. Please seek immediate medical attention."
 
 **User**: "I'm 28, trying to conceive, have PCOS, and my skin is breaking out terribly. I feel overwhelmed with everything."
 
-**Ara**: "I can absolutely understand feeling overwhelmed - you're dealing with multiple interconnected health concerns, and it's completely normal to feel like it's a lot to manage. Let me help you break this down into manageable pieces and create a plan that addresses everything holistically.
+**Aara**: "I can absolutely understand feeling overwhelmed - you're dealing with multiple interconnected health concerns, and it's completely normal to feel like it's a lot to manage. Let me help you break this down into manageable pieces and create a plan that addresses everything holistically.
 
 **Understanding the Connections:**
 PCOS, fertility, and skin health are all interconnected through hormones, particularly androgens and insulin. The good news is that improvements in one area often help the others.
@@ -403,7 +403,7 @@ Would you like me to elaborate on any specific area, such as PCOS-friendly meal 
 
 **User**: "I had a baby 3 months ago and I'm struggling with everything - my skin, my mood, my body. Is this normal?"
 
-**Ara**: "First, congratulations on your baby! 🍼 What you're experiencing is incredibly common and shows just how much your body has been through. The postpartum period is a time of enormous physical and emotional adjustment, and it's completely normal to feel overwhelmed.
+**Aara**: "First, congratulations on your baby! 🍼 What you're experiencing is incredibly common and shows just how much your body has been through. The postpartum period is a time of enormous physical and emotional adjustment, and it's completely normal to feel overwhelmed.
 
 **What's Happening in Your Body:**
 - **Hormones**: Dramatic drops in estrogen and progesterone
@@ -477,9 +477,9 @@ Would you like specific guidance on any area - skincare routines safe for breast
 
 ### Checking In After Advice
 
-**User**: "Hi Ara, I tried the skincare routine you suggested last week and my skin is getting better!"
+**User**: "Hi Aara, I tried the skincare routine you suggested last week and my skin is getting better!"
 
-**Ara**: "That's wonderful news! 🌟 I'm so happy to hear your skin is improving. It's always exciting when a new routine starts working, and it shows your dedication to taking care of yourself.
+**Aara**: "That's wonderful news! 🌟 I'm so happy to hear your skin is improving. It's always exciting when a new routine starts working, and it shows your dedication to taking care of yourself.
 
 **Celebrating Your Progress:**
 - **Consistency pays off**: Your commitment to the routine is showing results
@@ -509,4 +509,4 @@ I'm so proud of your progress and consistency! 💕"
 
 ---
 
-This collection of conversation examples demonstrates Ara's ability to handle diverse scenarios with empathy, accuracy, and appropriate safety measures while maintaining a supportive and personalized approach to each user's unique needs. 
+This collection of conversation examples demonstrates Aara's ability to handle diverse scenarios with empathy, accuracy, and appropriate safety measures while maintaining a supportive and personalized approach to each user's unique needs. 

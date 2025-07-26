@@ -2,7 +2,7 @@
 
 ## 🏗️ High-Level Architecture
 
-The Ara Health Agent is built on a modular, safety-first architecture that combines rule-based deterministic responses with AI-powered intelligent reasoning.
+The Aara Health Agent is built on a modular, safety-first architecture that combines rule-based deterministic responses with AI-powered intelligent reasoning.
 
 ## 🎯 Design Principles
 
@@ -178,7 +178,7 @@ The system maintains conversation state through:
 ### 1. Initial Interaction
 ```mermaid
 graph LR
-    A[User Greeting] --> B[Ara Introduction]
+    A[User Greeting] --> B[Aara Introduction]
     B --> C[Capability Overview]
     C --> D[How Can I Help?]
 ```
@@ -246,7 +246,7 @@ graph LR
 
 ### Local Development
 ```
-aara-health-agent/
+aAara-health-agent/
 ├── src/agent/          # Core agent logic
 ├── tools/              # Specialized tools
 ├── rules/              # Rule definitions
@@ -266,4 +266,4 @@ graph TB
     B --> G[Monitoring]
 ```
 
-This architecture ensures Ara provides safe, accurate, and empathetic health guidance while maintaining high performance and reliability. 
+This architecture ensures Aara provides safe, accurate, and empathetic health guidance while maintaining high performance and reliability. 

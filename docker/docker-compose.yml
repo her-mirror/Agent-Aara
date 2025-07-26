@@ -1,8 +1,8 @@
 version: '3.8'
 services:
-  ara-api:
+  Aara-api:
     build: .
-    container_name: ara-api
+    container_name: Aara-api
     env_file:
       - ../.env
     volumes:

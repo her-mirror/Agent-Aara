@@ -2,7 +2,7 @@
 
 ## 🎯 Overview
 
-The Ara Health Agent's rules system is a sophisticated, multi-layered decision engine that provides fast, deterministic responses for thousands of different user scenarios. With over 100KB of structured data, the system ensures safe, accurate, and personalized interactions.
+The Aara Health Agent's rules system is a sophisticated, multi-layered decision engine that provides fast, deterministic responses for thousands of different user scenarios. With over 100KB of structured data, the system ensures safe, accurate, and personalized interactions.
 
 ## 📊 Rules Architecture
 
@@ -563,4 +563,4 @@ class RuleAnalytics:
         )[:limit]
 ```
 
-This comprehensive rules system ensures that Ara can handle thousands of different user scenarios with appropriate, safe, and helpful responses while maintaining the empathetic, personalized experience that makes the agent unique. 
+This comprehensive rules system ensures that Aara can handle thousands of different user scenarios with appropriate, safe, and helpful responses while maintaining the empathetic, personalized experience that makes the agent unique. 

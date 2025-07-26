@@ -14,7 +14,7 @@ def main():
     # Set production environment
     os.environ.setdefault("ENVIRONMENT", "production")
     
-    print(f"🚀 Starting Ara Health Agent API on port {port}")
+    print(f"🚀 Starting Aara Health Agent API on port {port}")
     print(f"Environment: {os.environ.get('ENVIRONMENT', 'development')}")
     
     # Initialize vector store if needed

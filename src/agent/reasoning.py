@@ -10,7 +10,7 @@ def reasoning_node(llm):
         if chat_history:
             for i, msg in enumerate(chat_history[-3:]):  # Show last 3 messages
                 print(f"  {i+1}. User: {msg.get('user', '')[:50]}...")
-                print(f"     Ara: {msg.get('ara', '')[:50]}...")
+                print(f"     Aara: {msg.get('Aara', '')[:50]}...")
         
         # Use LLM to determine intent and next step
         prompt = f"""

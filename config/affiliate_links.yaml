@@ -54,7 +54,7 @@ products:
     
     serums:
       - name: "The Ordinary Niacinamide 10% + Zinc 1%"
-        description: "Serum to reduce appearance of blemishes and congestion"
+        description: "Serum to reduce appeAarance of blemishes and congestion"
         price_range: "$7-10"
         affiliate_link: "https://beautylish.com/your-niacinamide-link"
         keywords: ["acne", "oily skin", "pores", "blemishes", "oil control"]

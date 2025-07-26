@@ -22,7 +22,7 @@ def test_individual_chat_metrics():
     
     # Test messages with different complexity
     test_messages = [
-        "Hello Ara! How are you?",
+        "Hello Aara! How are you?",
         "I have oily skin and acne. What skincare routine do you recommend?",
         "Can you suggest specific products for combination skin with sensitive areas?",
         "Based on my previous question about skincare, recommend some affordable serums."

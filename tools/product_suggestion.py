@@ -107,7 +107,7 @@ class ProductSuggestionTool:
             if concern in user_input_lower:
                 context['health_concerns'].append(concern.replace(' ', '_'))
         
-        # ENHANCED: Analyze chat history for additional context (INCLUDING ARA'S RESPONSES)
+        # ENHANCED: Analyze chat history for additional context (INCLUDING Aara'S RESPONSES)
         for exchange in chat_history[-5:]:  # Look at last 5 exchanges
             
             # Extract from user messages
@@ -131,14 +131,14 @@ class ProductSuggestionTool:
                     if keyword in user_msg and keyword not in context['budget_indicators']:
                         context['budget_indicators'].append(keyword)
             
-            # ENHANCED: Extract from Ara's responses (this is the key fix!)
-            if 'ara' in exchange and exchange['ara']:
-                ara_msg = exchange['ara'].lower()
-                ara_msg_original = exchange['ara']  # Keep original for debugging
+            # ENHANCED: Extract from Aara's responses (this is the key fix!)
+            if 'Aara' in exchange and exchange['Aara']:
+                Aara_msg = exchange['Aara'].lower()
+                Aara_msg_original = exchange['Aara']  # Keep original for debugging
                 
-                print(f"📋 ANALYZING ARA'S RESPONSE: {ara_msg_original[:100]}...")
+                print(f"📋 ANALYZING Aara'S RESPONSE: {Aara_msg_original[:100]}...")
                 
-                # Look for skin type determinations in Ara's responses
+                # Look for skin type determinations in Aara's responses
                 skin_type_patterns = [
                     'your skin type is',
                     'skin type is',
@@ -153,12 +153,12 @@ class ProductSuggestionTool:
                 ]
                 
                 for pattern in skin_type_patterns:
-                    if pattern in ara_msg:
+                    if pattern in Aara_msg:
                         print(f"📋 FOUND PATTERN: '{pattern}' in message")
                         
                         # Extract the skin type that follows the pattern with better handling
-                        pattern_start = ara_msg.find(pattern) + len(pattern)
-                        text_after_pattern = ara_msg[pattern_start:pattern_start + 100]
+                        pattern_start = Aara_msg.find(pattern) + len(pattern)
+                        text_after_pattern = Aara_msg[pattern_start:pattern_start + 100]
                         print(f"📋 TEXT AFTER PATTERN: '{text_after_pattern}'")
                         
                         # Look for skin types, handling markdown and variations
@@ -202,7 +202,7 @@ class ProductSuggestionTool:
                         ]
                         
                         for pattern in aggressive_patterns:
-                            if pattern.lower() in ara_msg:
+                            if pattern.lower() in Aara_msg:
                                 context['skin_type'] = skin_type
                                 print(f"📋 ✅ AGGRESSIVE MATCH FOUND: {skin_type} (pattern: '{pattern}')")
                                 break
@@ -210,7 +210,7 @@ class ProductSuggestionTool:
                         if context['skin_type']:
                             break
                 
-                # Extract skin concerns mentioned in Ara's analysis
+                # Extract skin concerns mentioned in Aara's analysis
                 concern_patterns = [
                     'breakouts in the t-zone',
                     'shiny primarily in the t-zone',
@@ -220,16 +220,16 @@ class ProductSuggestionTool:
                 ]
                 
                 for pattern in concern_patterns:
-                    if pattern in ara_msg:
+                    if pattern in Aara_msg:
                         if 't-zone' in pattern and 'combination_tzone' not in context['skin_concerns']:
                             context['skin_concerns'].append('combination_tzone')
                         elif 'balanced' in pattern and 'balanced_skin' not in context['skin_concerns']:
                             context['skin_concerns'].append('balanced_skin')
                 
-                # Look for routine recommendations in Ara's responses to understand needs
+                # Look for routine recommendations in Aara's responses to understand needs
                 routine_keywords = ['morning routine', 'evening routine', 'gentle cleanser', 'lightweight moisturizer', 'oil-free', 'broad-spectrum spf']
                 for keyword in routine_keywords:
-                    if keyword in ara_msg and keyword.replace(' ', '_') not in context['mentioned_products']:
+                    if keyword in Aara_msg and keyword.replace(' ', '_') not in context['mentioned_products']:
                         context['mentioned_products'].append(keyword.replace(' ', '_'))
         
         print(f"📋 FINAL EXTRACTED CONTEXT:")

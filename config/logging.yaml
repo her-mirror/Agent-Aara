@@ -8,7 +8,7 @@ handlers:
     formatter: simple
     level: INFO
 loggers:
-  aara:
+  aAara:
     handlers: [console]
     level: INFO
     propagate: no

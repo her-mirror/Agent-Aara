@@ -84,15 +84,16 @@ def response_node(llm):
         if chat_history:
             for i, msg in enumerate(chat_history[-2:]):  # Show last 2 messages
                 print(f"  {i+1}. User: {msg.get('user', '')[:40]}...")
-                print(f"     Ara: {msg.get('ara', '')[:40]}...")
+                print(f"     Aara: {msg.get('Aara', '')[:40]}...")
         
         # Check if we already have a final response from rules or tools
         if state.get('final_response'):
-            # Just ensure disclaimer is appended for medical content
+            # Only add disclaimer if response contains medical advice
             response = state['final_response']
-            if 'consult a doctor' not in response.lower() and not any(keyword in response.lower() 
-                for keyword in ['crisis', 'emergency', '911', '988', 'suicide']):
-                response += "\n\n_Consult a doctor for medical advice._"
+            if any(keyword in response.lower() for keyword in ['diagnosis', 'treatment', 'medication', 'symptoms', 'condition']):
+                if 'consult a doctor' not in response.lower() and not any(keyword in response.lower() 
+                    for keyword in ['crisis', 'emergency', '911', '988', 'suicide']):
+                    response += "\n\n_Consult a doctor for medical advice._"
             
             # VERIFICATION STEP: Verify rule-based response
             verified_response = verify_response(llm, user_input, response)
@@ -130,14 +131,15 @@ def response_node(llm):
                 """
                 
             else:
-                # Default LLM response
+                # Use conversational prompt for natural responses
+                conversational_prompt = load_prompt('conversational_prompt.txt')
                 context = f"""
-                User input: {user_input}
+                {conversational_prompt}
+
+                User's message: {user_input}
                 Chat history: {chat_history}
                 
-                You are Ara, an empathetic AI agent specializing in women's health and skincare. 
-                Provide a helpful, accurate, and supportive response. 
-                Be empathetic and non-judgmental.
+                Respond naturally as Aara, offering to help with specific topics based on what they mentioned.
                 """
             
             try:
@@ -165,9 +167,10 @@ def response_node(llm):
                 # Don't add medical disclaimer for greetings
                 pass
             else:
-                # Add medical disclaimer for other responses
-                if 'consult a doctor' not in response_text.lower():
-                    response_text += "\n\n_Consult a doctor for medical advice._"
+                # Only add medical disclaimer if the response contains medical advice
+                if any(keyword in response_text.lower() for keyword in ['diagnosis', 'treatment', 'medication', 'symptoms', 'condition']):
+                    if 'consult a doctor' not in response_text.lower():
+                        response_text += "\n\n_Consult a doctor for medical advice._"
             
             # VERIFICATION STEP: Verify LLM-based response
             verified_response = verify_response(llm, user_input, response_text)
@@ -179,15 +182,16 @@ def response_node(llm):
         steps = state.get('intermediate_steps', [])
         chat_history = state.get('chat_history', [])
         
-        # Create context for LLM
+        # Use conversational prompt for natural responses
+        conversational_prompt = load_prompt('conversational_prompt.txt')
         context = f"""
-        User input: {user_input}
+        {conversational_prompt}
+
+        User's message: {user_input}
         Chat history: {chat_history}
         Processing steps: {steps}
         
-        You are Ara, an empathetic AI agent specializing in women's health and skincare. 
-        Provide a helpful, accurate, and supportive response. 
-        Be empathetic and non-judgmental.
+        Respond naturally as Aara, offering to help with specific topics based on what they mentioned.
         """
         
         try:
@@ -197,10 +201,10 @@ def response_node(llm):
             print(f"Error generating response: {e}")
             response_text = "I apologize, but I'm having trouble processing your request right now. Please try again."
         
-        # Always append medical disclaimer for general responses
-        disclaimer = "\n\n_Consult a doctor for medical advice._"
-        if 'consult a doctor' not in response_text.lower():
-            response_text += disclaimer
+        # Only append medical disclaimer if response contains medical advice
+        if any(keyword in response_text.lower() for keyword in ['diagnosis', 'treatment', 'medication', 'symptoms', 'condition']):
+            if 'consult a doctor' not in response_text.lower():
+                response_text += "\n\n_Consult a doctor for medical advice._"
         
         # VERIFICATION STEP: Verify general LLM response
         verified_response = verify_response(llm, user_input, response_text)
